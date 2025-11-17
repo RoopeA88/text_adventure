@@ -13,6 +13,8 @@ public class Character {
 
     private static Character instance;
 
+    String juttu;
+
     
 
     private Character(){

@@ -12,6 +12,7 @@ public enum CharacterType {
     }
 
     public String getCharacterType(){
+        System.out.println("moi");
         return this.typeOfCharacter;
 
     }

@@ -7,5 +7,6 @@ class Main{
         character.chooseCharacterClass();
         System.out.println("Your class is: ");
         System.out.println(character.getCharacterClass());
+        System.out.println("moi");
     }
 }
