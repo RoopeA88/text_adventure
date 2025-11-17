@@ -1,85 +1,64 @@
-public class Sword {
-
+public class Axe {
     private int level;
     private String name;
     private int minDamage;
     private int maxDamage;
     private String quality;
-    private String character;
 
-    public Sword(SwordBuilder swordBuilder){
-
-        this.level = swordBuilder.level;
-        this.name = swordBuilder.name;
-        this.minDamage = swordBuilder.minDamage;
-        this.maxDamage = swordBuilder.maxDamage;
-        this.quality = swordBuilder.quality;
-        this.character = swordBuilder.character;
+    private Axe(AxeBuilder axeBuilder){
+        this.level = axeBuilder.level;
+        this.name = axeBuilder.name;
+        this.minDamage = axeBuilder.minDamage;
+        this.maxDamage = axeBuilder.maxDamage;
+        this.quality = axeBuilder.quality;
     }
 
     public int getLevel(){
         return this.level;
     }
-
     public String getName(){
         return this.name;
     }
-
     public int getMinDamage(){
         return this.minDamage;
     }
-
     public int getMaxDamage(){
         return this.maxDamage;
     }
     public String getQuality(){
         return this.quality;
     }
-
-    private class SwordBuilder{
-
+    
+    public class AxeBuilder{
         private int level;
         private String name;
         private int minDamage;
         private int maxDamage;
         private String quality;
-        private String character;
 
-        public SwordBuilder level(int level_){
-
+        public AxeBuilder level(int level_){
             this.level = level_;
             return this;
         }
-
-        public SwordBuilder name(String name_){
+        public AxeBuilder name(String name_){
             this.name = name_;
             return this;
         }
-
-        public SwordBuilder minDamage(int minDamage_){
+        public AxeBuilder minDamage(int minDamage_){
             this.minDamage = minDamage_;
             return this;
         }
-
-        public SwordBuilder maxDamage(int maxDamage_){
+        public AxeBuilder maxDamage(int maxDamage_){
             this.maxDamage = maxDamage_;
             return this;
         }
-
-        public SwordBuilder quality(String quality_){
+        public AxeBuilder quality(String quality_){
             this.quality = quality_;
             return this;
         }
-
-        public SwordBuilder character(String character_){
-            this.character = character_;
-            return this;
+        public Axe builder(){
+            return new Axe(this);
         }
-
-        public Sword build(){
-            return new Sword(this);
-        }
-        
 
     }
 }
