@@ -2,24 +2,14 @@ import java.util.Scanner;
 
 public class Character {
     Scanner scanner = new Scanner(System.in);
-
     private String name;
-
-    private 
-
     Alliance alliance;
-
     CharacterType characterType;
-
     private static Character instance;
 
     
-
-    
-
     private Character(){
-        
-        
+            
     }
 
     public static Character getInstance(){
@@ -34,7 +24,6 @@ public class Character {
         while(loop){
 
             System.out.println("Choose a character class: Mage (1), Barbarian (2), Soldier (3), Thief (4), Necromancer (5)");
-
             int chosenClass = scanner.nextInt();
 
             switch (chosenClass){
