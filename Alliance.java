@@ -12,7 +12,7 @@ public enum Alliance  {
     }
 
     public String getAlliance(){
-        System.out.println("moi");
+        
         return this.playerAlliance;
     }
     
