@@ -7,6 +7,13 @@ class Main{
         character.chooseCharacterClass();
         System.out.println("Your class is: ");
         System.out.println(character.getCharacterClass());
-        
+        Sword sword = new Sword.SwordBuilder()
+                        .name("Excalibur")
+                        .level(5)
+                        .minDamage(10)
+                        .maxDamage(20)
+                        .quality("Legendary")
+                        .character("Soldier")
+                        .build();
     }
 }

@@ -8,6 +8,8 @@ public class Character {
     private static Character instance;
 
     
+
+    
     private Character(){
             
     }

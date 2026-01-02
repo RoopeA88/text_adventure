@@ -1,4 +1,4 @@
-public class Shield implements ArmorInterface {
+public class BodyArmor implements ArmorInterface {
     
     int level;
     String name;
@@ -6,12 +6,12 @@ public class Shield implements ArmorInterface {
     double maxDefence;
     String quality;
 
-    private Shield(ShieldBuilder shieldBuilder){
-        this.level = shieldBuilder.level;
-        this.name = shieldBuilder.name;
-        this.minDefence = shieldBuilder.minDefence;
-        this.maxDefence = shieldBuilder.maxDefence;
-        this.quality = shieldBuilder.quality;
+    private BodyArmor(BodyArmorBuilder BodyArmorBuilder){
+        this.level = BodyArmorBuilder.level;
+        this.name = BodyArmorBuilder.name;
+        this.minDefence = BodyArmorBuilder.minDefence;
+        this.maxDefence = BodyArmorBuilder.maxDefence;
+        this.quality = BodyArmorBuilder.quality;
     }
 
     public int getLevel(){
@@ -30,35 +30,36 @@ public class Shield implements ArmorInterface {
     public String getQuality(){
         return this.quality;
     }
-    public class ShieldBuilder{
+    public class BodyArmorBuilder{
         int level;
         String name;
         double minDefence;
         double maxDefence;
         String quality;
 
-        public ShieldBuilder level(int level_){
+        public BodyArmorBuilder level(int level_){
             this.level = level_;
             return this;
         }
-        public ShieldBuilder name(String name_){
+        public BodyArmorBuilder name(String name_){
             this.name = name_;
             return this;
         }
-        public ShieldBuilder minDefence(int minDefence_){
+        public BodyArmorBuilder minDefence(int minDefence_){
             this.minDefence = minDefence_;
             return this;
         }
-        public ShieldBuilder maxDefence(int maxDefence_){
+        public BodyArmorBuilder maxDefence(int maxDefence_){
             this.maxDefence = maxDefence_;
             return this;
         }
-        public ShieldBuilder quality(String quality_){
+        public BodyArmorBuilder quality(String quality_){
             this.quality = quality_;
             return this;
         }
-        public Shield build(){
-            return new Shield(this);
+        public BodyArmor build(){
+            return new BodyArmor(this);
         }
     }
 }
+

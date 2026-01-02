@@ -1,15 +1,15 @@
 import java.util.ArrayList;
-
+import java.util.ArrayList;
 public class Inventory {
     
-    Swords swordInventory;
-    Shields shieldInventory;
-    Daggers daggerInventory;
-    Axes axeInventory;
-    Wands wandInventory;
+    ArrayList<Sword> swordInventory = new ArrayList<>();
+    ArrayList<Shield> shieldInventory = new ArrayList<>();
+    ArrayList<Dagger> daggerInventory = new ArrayList<>();
+    ArrayList<Axe> axeInventory = new ArrayList<>();
+    ArrayList<Wand> wandInventory = new ArrayList<>();
 
-    LegArmors legArmorInventory;
-    BodyArmors bodyArmorInventory;
+    ArrayList<LegArmor> legArmorInventory = new ArrayList<>();
+    ArrayList<BodyArmor> bodyArmorInventory = new ArrayList<>();
     HeadGear headGearInventory;
     ArmGear armGearInvetory; 
 
@@ -20,5 +20,11 @@ public class Inventory {
     Food foodInventory;
 
     CraftingItems craftingInvetory;
+
+    public Inventory(){
+
+    }
+
+    public takeSword(Sword sword_)
 
 }
