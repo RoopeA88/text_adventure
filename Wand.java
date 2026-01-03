@@ -1,8 +1,8 @@
-public class Wand {
+public class Wand implements WeaponInterface{
     private int level;
     private String name;
-    private int minDamage;
-    private int maxDamage;
+    private double minDamage;
+    private double maxDamage;
     private String quality;
 
     private Wand(WandBuilder wandBuilder){
@@ -19,10 +19,10 @@ public class Wand {
     public String getName(){
         return this.name;
     }
-    public int getMinDamage(){
+    public double getMinDamage(){
         return this.minDamage;
     }
-    public int getMaxDamage(){
+    public double getMaxDamage(){
         return this.maxDamage;
     }
     public String getQuality(){
@@ -32,8 +32,8 @@ public class Wand {
     public class WandBuilder{
         private int level;
         private String name;
-        private int minDamage;
-        private int maxDamage;
+        private double minDamage;
+        private double maxDamage;
         private String quality;
 
         public WandBuilder level(int level_){
@@ -44,11 +44,11 @@ public class Wand {
             this.name = name_;
             return this;
         }
-        public WandBuilder minDamage(int minDamage_){
+        public WandBuilder minDamage(double minDamage_){
             this.minDamage = minDamage_;
             return this;
         }
-        public WandBuilder maxDamage(int maxDamage_){
+        public WandBuilder maxDamage(double maxDamage_){
             this.maxDamage = maxDamage_;
             return this;
         }

@@ -1,9 +1,9 @@
-public class Dagger {
+public class Dagger implements WeaponInterface {
     
     private int level;
     private String name;
-    private int minDamage;
-    private int maxDamage;
+    private double minDamage;
+    private double maxDamage;
     private String quality;
 
     private Dagger(Daggerbuilder daggerbuilder){
@@ -19,10 +19,10 @@ public class Dagger {
         public String getName(){
             return this.name;
         }
-        public int getMinDamage(){
+        public double getMinDamage(){
             return this.minDamage;
         }
-        public int getMaxDamage(){
+        public double getMaxDamage(){
             return this.maxDamage;
         }
         public String getQuality(){
@@ -31,11 +31,11 @@ public class Dagger {
 
     public class Daggerbuilder{
 
-        public int level;
-        public String name;
-        public int minDamage;
-        public int maxDamage;
-        public String quality;
+        private int level;
+        private String name;
+        private double minDamage;
+        private double maxDamage;
+        private String quality;
 
         public Daggerbuilder level(int level_){
             this.level = level_;
@@ -45,11 +45,11 @@ public class Dagger {
             this.name = name_;
             return this;
         }
-        public Daggerbuilder minDamage(int minDamage_){
+        public Daggerbuilder minDamage(double minDamage_){
             this.minDamage = minDamage_;
             return this;
         }
-        public Daggerbuilder maxDamage(int maxDamage_){
+        public Daggerbuilder maxDamage(double maxDamage_){
             this.maxDamage = maxDamage_;
             return this;
         }

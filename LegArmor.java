@@ -30,11 +30,11 @@ public class LegArmor implements ArmorInterface {
     }
     public class LegArmorBuilder{
 
-        public int level;
-        public String name;
-        public double minDefence;
-        public double maxDefence;
-        public String quality;
+        private int level;
+        private String name;
+        private double minDefence;
+        private double maxDefence;
+        private String quality;
 
         public LegArmorBuilder level(int level_){
             this.level = level_;

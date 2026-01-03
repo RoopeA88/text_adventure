@@ -3,10 +3,17 @@ import java.util.Scanner;
 public class Character {
     Scanner scanner = new Scanner(System.in);
     private String name;
-    Alliance alliance;
-    CharacterType characterType;
+    private Alliance alliance;
+    private CharacterType characterType;
     private static Character instance;
-
+    private double hp;
+    private double poisonDefence;
+    private double fireDefence;
+    private double iceDefence;
+    private double earthDefence;
+    private double airDefence;
+    private String position;
+    
     
 
     

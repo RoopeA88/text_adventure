@@ -1,4 +1,4 @@
-public class Shield implements ArmorInterface {
+public class HeadGear implements ArmorInterface {
     
     int level;
     String name;
@@ -6,12 +6,12 @@ public class Shield implements ArmorInterface {
     double maxDefence;
     String quality;
 
-    private Shield(ShieldBuilder shieldBuilder){
-        this.level = shieldBuilder.level;
-        this.name = shieldBuilder.name;
-        this.minDefence = shieldBuilder.minDefence;
-        this.maxDefence = shieldBuilder.maxDefence;
-        this.quality = shieldBuilder.quality;
+    private HeadGear(HeadGearBuilder HeadGearBuilder){
+        this.level = HeadGearBuilder.level;
+        this.name = HeadGearBuilder.name;
+        this.minDefence = HeadGearBuilder.minDefence;
+        this.maxDefence = HeadGearBuilder.maxDefence;
+        this.quality = HeadGearBuilder.quality;
     }
 
     public int getLevel(){
@@ -30,35 +30,36 @@ public class Shield implements ArmorInterface {
     public String getQuality(){
         return this.quality;
     }
-    public class ShieldBuilder{
+    public class HeadGearBuilder{
         private int level;
         private String name;
         private double minDefence;
         private double maxDefence;
         private String quality;
 
-        public ShieldBuilder level(int level_){
+        public HeadGearBuilder level(int level_){
             this.level = level_;
             return this;
         }
-        public ShieldBuilder name(String name_){
+        public HeadGearBuilder name(String name_){
             this.name = name_;
             return this;
         }
-        public ShieldBuilder minDefence(int minDefence_){
+        public HeadGearBuilder minDefence(int minDefence_){
             this.minDefence = minDefence_;
             return this;
         }
-        public ShieldBuilder maxDefence(int maxDefence_){
+        public HeadGearBuilder maxDefence(int maxDefence_){
             this.maxDefence = maxDefence_;
             return this;
         }
-        public ShieldBuilder quality(String quality_){
+        public HeadGearBuilder quality(String quality_){
             this.quality = quality_;
             return this;
         }
-        public Shield build(){
-            return new Shield(this);
+        public HeadGear build(){
+            return new HeadGear(this);
         }
     }
 }
+

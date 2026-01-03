@@ -10,21 +10,28 @@ public class Inventory {
 
     ArrayList<LegArmor> legArmorInventory = new ArrayList<>();
     ArrayList<BodyArmor> bodyArmorInventory = new ArrayList<>();
-    HeadGear headGearInventory;
-    ArmGear armGearInvetory; 
+    ArrayList<HeadGear> headGearInventory = new ArrayList<>();
+    ArrayList<ArmGear> armGearInvetory = new ArrayList<>(); 
 
-    Amulets amuletInventory;
-    Rings ringInventory;
+    ArrayList<Amulet> amuletInventory = new ArrayList<>();
+    ArrayList<Ring> ringInventory = new ArrayList<>();
 
-    Potions potionInventory;
-    Food foodInventory;
+    ArrayList<Potion> potionInventory = new ArrayList<>();
+    ArrayList<Food> foodInventory = new ArrayList<>();
 
-    CraftingItems craftingInvetory;
+    Crafting craftingInvetory;
 
     public Inventory(){
 
     }
 
-    public takeSword(Sword sword_)
+    public void takeSword(Sword sword_){
+        if(swordInventory.size() >=5){
+            System.out.println("Can't pick up the sword, sword slots are full");
+        } else{
+        System.out.println("You picked up a sword: "+sword_.getName()+".");
+        swordInventory.add(sword_);
+        }
+    }
 
 }

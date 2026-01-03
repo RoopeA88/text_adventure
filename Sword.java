@@ -1,9 +1,9 @@
-public class Sword {
+public class Sword implements WeaponInterface{
 
     private int level;
     private String name;
-    private int minDamage;
-    private int maxDamage;
+    private double minDamage;
+    private double maxDamage;
     private String quality;
     private String character;
 
@@ -25,11 +25,11 @@ public class Sword {
         return this.name;
     }
 
-    public int getMinDamage(){
+    public double getMinDamage(){
         return this.minDamage;
     }
 
-    public int getMaxDamage(){
+    public double getMaxDamage(){
         return this.maxDamage;
     }
     public String getQuality(){
@@ -40,8 +40,8 @@ public class Sword {
 
         private int level;
         private String name;
-        private int minDamage;
-        private int maxDamage;
+        private double minDamage;
+        private double maxDamage;
         private String quality;
         private String character;
 
@@ -56,12 +56,12 @@ public class Sword {
             return this;
         }
 
-        public SwordBuilder minDamage(int minDamage_){
+        public SwordBuilder minDamage(double minDamage_){
             this.minDamage = minDamage_;
             return this;
         }
 
-        public SwordBuilder maxDamage(int maxDamage_){
+        public SwordBuilder maxDamage(double maxDamage_){
             this.maxDamage = maxDamage_;
             return this;
         }

@@ -31,11 +31,11 @@ public class BodyArmor implements ArmorInterface {
         return this.quality;
     }
     public class BodyArmorBuilder{
-        int level;
-        String name;
-        double minDefence;
-        double maxDefence;
-        String quality;
+        private int level;
+        private String name;
+        private double minDefence;
+        private double maxDefence;
+        private String quality;
 
         public BodyArmorBuilder level(int level_){
             this.level = level_;

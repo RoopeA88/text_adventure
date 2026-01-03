@@ -1,8 +1,8 @@
-public class Axe {
+public class Axe implements WeaponInterface{
     private int level;
     private String name;
-    private int minDamage;
-    private int maxDamage;
+    private double minDamage;
+    private double maxDamage;
     private String quality;
 
     private Axe(AxeBuilder axeBuilder){
@@ -19,10 +19,10 @@ public class Axe {
     public String getName(){
         return this.name;
     }
-    public int getMinDamage(){
+    public double getMinDamage(){
         return this.minDamage;
     }
-    public int getMaxDamage(){
+    public double getMaxDamage(){
         return this.maxDamage;
     }
     public String getQuality(){
@@ -32,8 +32,8 @@ public class Axe {
     public class AxeBuilder{
         private int level;
         private String name;
-        private int minDamage;
-        private int maxDamage;
+        private double minDamage;
+        private double maxDamage;
         private String quality;
 
         public AxeBuilder level(int level_){
@@ -44,11 +44,11 @@ public class Axe {
             this.name = name_;
             return this;
         }
-        public AxeBuilder minDamage(int minDamage_){
+        public AxeBuilder minDamage(double minDamage_){
             this.minDamage = minDamage_;
             return this;
         }
-        public AxeBuilder maxDamage(int maxDamage_){
+        public AxeBuilder maxDamage(double maxDamage_){
             this.maxDamage = maxDamage_;
             return this;
         }
