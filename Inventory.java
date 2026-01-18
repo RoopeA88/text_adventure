@@ -19,7 +19,7 @@ public class Inventory {
     ArrayList<Potion> potionInventory = new ArrayList<>();
     ArrayList<Food> foodInventory = new ArrayList<>();
 
-    Crafting craftingInvetory;
+    private int ironOre = 0;
 
     public Inventory(){
 
@@ -32,6 +32,13 @@ public class Inventory {
         System.out.println("You picked up a sword: "+sword_.getName()+".");
         swordInventory.add(sword_);
         }
+    }
+
+    public int getIronOre(){
+        return this.ironOre;
+    }
+    public void takeIronOre(){
+        ironOre+=1;
     }
 
 }
