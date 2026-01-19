@@ -5,11 +5,7 @@ public class Game {
     Character hero = Character.getInstance(inventory);
     
     public Game(){
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        clearScreen();
         hero.chooseName();
         System.out.println("Your name is: ");
         System.out.println(hero.getName());
@@ -36,5 +32,11 @@ public class Game {
     }
     public void stop(){
         running = false;
+    }
+
+    public void clearScreen(){
+        for(int i = 0; i<10; i++){
+            System.out.println();
+        }
     }
 }

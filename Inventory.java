@@ -20,6 +20,12 @@ public class Inventory {
     ArrayList<Food> foodInventory = new ArrayList<>();
 
     private int ironOre = 0;
+    private int coal = 0;
+    private int silver = 0;
+    private int gold = 0;
+    private int mithril = 0;
+    private int adamantite = 0;
+    private int runite = 0;
 
     public Inventory(){
 
@@ -38,7 +44,52 @@ public class Inventory {
         return this.ironOre;
     }
     public void takeIronOre(){
+        System.out.println("You managed to mine some iron ore.");
+
         ironOre+=1;
+    }
+    public int getCoal(){
+        return this.coal;
+    }
+    public void takeCoal(){
+        System.out.println("You managed to mine some coal.");
+
+        coal+=1;
+    }
+    public int getSilver(){
+        return this.silver;
+    }
+    public void takeSilver(){
+        System.out.println("You managed to mine some silver.");
+        silver+=1;
+    }
+    public int getGold(){
+        return this.gold;
+    }
+    public void takeGold(){
+        System.out.println("You managed to mine some gold.");
+        gold+=1;
+    }
+    public int getMithril(){
+        return this.mithril;
+    }
+    public void takeMithril(){
+        System.out.println("You managed to mine some mithril.");
+        mithril+=1;
+    }
+    public int getAdamantite(){
+        return this.adamantite;
+    }
+    public void takeAdamantite(){
+        System.out.println("You managed to mine some adamantite.");
+        adamantite+=1;
+    }
+    public int getRunite(){
+        return this.runite;
+    }
+    public void takeRunite(){
+        System.out.println("You managed to mine some runite.");
+        runite+=1;
     }
 
 }

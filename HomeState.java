@@ -12,11 +12,7 @@ public class HomeState implements GameState {
     public void execute(Game game){
 
         while(active){
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println();
+            game.clearScreen();
             System.out.println("What would you like to do? fight common enemies(1), craft(2), fight a boss(3), train attributes(4), save and quit(5)");
             try{
                 int selection = scanner.nextInt();
