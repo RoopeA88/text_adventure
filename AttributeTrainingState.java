@@ -14,6 +14,10 @@ public class AttributeTrainingState implements GameState {
             int choice = scanner.nextInt();
             
             switch(choice){
+                case 0:
+                    game.setState(new HomeState());
+                    attributeTrainingRunning = false;
+                    break;
                 case 1:
                     
                     while(true){

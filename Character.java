@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Character {
     Scanner scanner = new Scanner(System.in);
     private String name;
-    private Alliance alliance;
+    
     private CharacterType characterType;
     private static Character instance;
     private double hp;
@@ -118,6 +118,36 @@ public class Character {
     }
     public double getPotionCrafting(){
         return Math.round(this.potionCrafting * 100.0) / 100.0;
+    }
+    public double getHp(){
+        return this.hp;
+    }
+    public double getStrength(){
+        return this.hp;
+    }
+    public double getVitality(){
+        return this.vitality;
+    }
+    public double getAccuracy(){
+        return this.accuracy;
+    }
+    public double getIntelligence(){
+        return this.intelligence;
+    }
+    public double getFireDefence(){
+        return this.fireDefence;
+    }
+    public double getPoisonDefence(){
+        return this.poisonDefence;
+    }
+    public double getAirDefence(){
+        return this.airDefence;
+    }
+    public double getIceDefence(){
+        return this.iceDefence;
+    }
+    public double getEarthDefence(){
+        return this.earthDefence;
     }
     public  void trainAttribute(String attribute){
         switch(attribute){
