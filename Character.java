@@ -149,6 +149,74 @@ public class Character {
     public double getEarthDefence(){
         return this.earthDefence;
     }
+    public void setName(String name_){
+        this.name = name_;
+    }
+    public void setCharacterClass(String type){
+        if(type.equals("Mage")){
+            characterType = CharacterType.MAGE;
+        } else if(type.equals("Barbarian")){
+            characterType = CharacterType.BARBARIAN;
+        } else if(type.equals("Necromancer")){
+            characterType = CharacterType.NECROMANCER;
+        } else if(type.equals("Thief")){
+            characterType = CharacterType.THIEF;
+        } else if(type.equals("Soldier")){
+            characterType = CharacterType.SOLDIER;
+        }
+    }
+    public void setHp(double hp_){
+        this.hp = hp_;
+    }
+    public void setPoisonDefence(double poisonDefence_){
+        this.poisonDefence = poisonDefence_;
+    }
+    public void setFireDefence(double fireDefence_){
+        this.fireDefence = fireDefence_;
+    }
+    public void setIceDefence(double iceDefence_){
+        this.iceDefence = iceDefence_;
+    }
+    public void setEarthDefence(double earthDefence_){
+        this.earthDefence = earthDefence_;
+    }
+    public void setAirDefence(double airDefence_){
+        this.airDefence = airDefence_;
+    }
+    public void setStrength(double strength_){
+        this.strength = strength_;
+    }
+    public void setIntelligence(double intelligence_){
+        this.intelligence = intelligence_;
+    }
+    public void setVitality(double vitality_){
+        this.vitality = vitality_;
+    }
+    public void setAccuracy(double accuracy_){
+        this.accuracy = accuracy_;    
+    }
+    public void setMining(double mining_){
+        this.mining = mining_;
+    }
+    public void setSmithing(double smithing_){
+        this.smithing = smithing_;
+    }
+    public void setFishing(double fishing_){
+        this.fishing = fishing_;
+    }
+    public void setCooking(double cooking_){
+        this.cooking = cooking_;
+    }
+    public void setCrafting(double crafting_){
+        this.crafting = crafting_;
+    }
+    public void setPotionCrafting(double potionCrafting_){
+        this.potionCrafting = potionCrafting_;
+    }
+    public void setThieving(double thieving_){
+        this.thieving = thieving_;
+    }
+    
     public  void trainAttribute(String attribute){
         switch(attribute){
             case "mining":

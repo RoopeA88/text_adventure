@@ -1,7 +1,9 @@
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
-
+import org.json.JSONObject;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 public class Game {
     private GameState currentState;
     private boolean running = true;
@@ -44,42 +46,68 @@ public class Game {
             System.out.println();
         }
     }
-    public void saveGame(String save){
-        String jsonSave = String.format(Locale.US,
-        "{\n"+
-        
-        "\"name\": \"%s\",\n" +
-        "\"character type\": \"%s\", \n"+
-        "\"hp\": %f, \n"+
-        "\"poison defence\": %f, \n"+
-        "\"fire defence\": %f, \n"+
-        "\"ice defence\": %f, \n"+
-        "\"earth defence\": %f, \n"+
-        "\"air defence\": %f, \n"+
-        "\"strength\": %f, \n"+
-        "\"intelligence\": %f, \n"+
-        "\"vitality\": %f, \n"+
-        "\"accuracy\": %f, \n"+
-        "\"mining\": %f, \n"+
-        "\"fishing\": %f, \n"+
-        "\"thieving\": %f, \n"+
-        "\"smithing\": %f, \n"+
-        "\"crafting\": %f, \n"+
-        "\"potion crafting\": %f, \n"+
-        "\"cooking\": %f\n"+
-        "}",
-        hero.getName(),hero.getCharacterClass(), hero.getHp(), hero.getPoisonDefence(), hero.getFireDefence(), hero.getIceDefence(), hero.getEarthDefence(),
-        hero.getAirDefence(),hero.getStrength(), hero.getIntelligence(), hero.getVitality(),hero.getAccuracy(), hero.getMining(), hero.getFishing(),
-        hero.getThieving(),hero.getSmithing(), hero.getCrafting(),hero.getPotionCrafting(), hero.getCooking()
 
 
-    );
-        try (FileWriter file = new FileWriter(save+".json")) {
-        file.write(jsonSave);
-        System.out.println("✅ Peli tallennettu ID:llä slottiin: "+save.charAt(save.length()-1)+".");
+public void saveGame(String file) {
+    try {
         
-    } catch (IOException e) {
+        JSONObject json = new JSONObject();
+        
+        
+        
+        json.put("name", hero.getName());
+        json.put("character type", hero.getCharacterClass());
+        json.put("hp", hero.getHp());
+        json.put("poison defence", hero.getPoisonDefence());
+        json.put("fire defence", hero.getFireDefence());
+        json.put("ice defence", hero.getIceDefence());
+        json.put("earth defence", hero.getEarthDefence());
+        json.put("air defence", hero.getAirDefence());
+        json.put("strength", hero.getStrength());
+        json.put("intelligence", hero.getIntelligence());
+        json.put("vitality", hero.getVitality());
+        json.put("accuracy", hero.getAccuracy());
+        json.put("mining", hero.getMining());
+        json.put("fishing", hero.getFishing());
+        json.put("thieving", hero.getThieving());
+        json.put("smithing", hero.getSmithing());
+        json.put("crafting", hero.getCrafting());
+        json.put("potion crafting", hero.getPotionCrafting());
+        json.put("cooking", hero.getCooking());
+        
+        
+        String jsonString = json.toString(2);
+        
+        if(file.equals("Save1")){
+            Files.write(Paths.get(file+".json"), jsonString.getBytes());
+        
+            System.out.println("Game saved to slot 1");
+        } else if(file.equals("Save2")){
+            Files.write(Paths.get(file+".json"), jsonString.getBytes());
+        
+            System.out.println("Game saved to slot 2");
+        } else if(file.equals("Save3")){
+            Files.write(Paths.get(file+".json"), jsonString.getBytes());
+        
+            System.out.println("Game saved to slot 3");
+        } else if(file.equals("Save4")){
+            Files.write(Paths.get(file+".json"), jsonString.getBytes());
+        
+            System.out.println("Game saved to slot 4");
+        } else if(file.equals("Save5")){
+            Files.write(Paths.get(file+".json"), jsonString.getBytes());
+        
+            System.out.println("Game saved to slot 5");
+        }
+
+        
+    } catch (Exception e) {
         System.err.println("❌ Tallennus epäonnistui: " + e.getMessage());
     }
+}
+    public void loadGame(String save){
+        if(save.equals("Save1")){
+
+        }
     }
 }
