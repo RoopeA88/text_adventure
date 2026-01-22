@@ -37,6 +37,10 @@ public class HomeState implements GameState {
                         game.setState(new QuitState());
                         active = false;
                         break;
+                    //testi
+                    case 6:
+                        System.out.println("Mining level: "+game.hero.getMining());
+                        break;
                     }
                     
 

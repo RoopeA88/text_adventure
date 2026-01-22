@@ -1,12 +1,12 @@
 {
-  "character type": "Thief",
+  "character type": "Mage",
   "air defence": 0,
   "fire defence": 0,
   "strength": 0,
   "fishing": 0,
   "hp": 0,
   "accuracy": 0,
-  "mining": 0,
+  "mining": 0.11,
   "intelligence": 0,
   "potion crafting": 0,
   "smithing": 0,
@@ -15,7 +15,7 @@
   "ice defence": 0,
   "vitality": 0,
   "crafting": 0,
-  "name": "janne",
+  "name": "roope",
   "cooking": 0,
   "thieving": 0
 }

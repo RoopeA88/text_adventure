@@ -2,23 +2,66 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
 import org.json.JSONObject;
+
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
+
+
 public class Game {
     private GameState currentState;
     private boolean running = true;
     Inventory inventory = new Inventory();
     Character hero = Character.getInstance(inventory);
-    int idCounter = 1;
+    Scanner scanner = new Scanner(System.in);
+    
     
     public Game(){
         clearScreen();
-        hero.chooseName();
-        System.out.println("Your name is: ");
-        System.out.println(hero.getName());
-        hero.chooseCharacterClass();
-        System.out.println("Your class is: ");
-        System.out.println(hero.getCharacterClass());
+        while(true){
+
+        
+            System.out.println("Start a new game(1), load game(2)");
+            int input = scanner.nextInt();
+            if(input == 1){
+                hero.chooseName();
+                System.out.println("Your name is: ");
+                System.out.println(hero.getName());
+                hero.chooseCharacterClass();
+                System.out.println("Your class is: ");
+                System.out.println(hero.getCharacterClass());
+                break;
+            } else if(input ==2){
+                System.out.println("Select a slot to load (1-5)");
+                int input2 = scanner.nextInt();
+                if(input2 == 1){
+                    loadGame("Save1");
+                    break;
+                } else if(input2 == 2){
+                    loadGame("Save2");
+                    break;
+                } else if(input2 == 3){
+                    loadGame("Save3");
+                    break;
+                } else if(input2 == 4){
+                    loadGame("Save4");
+                    break;
+                } else if(input2 == 5){
+                    loadGame("Save5");
+                    break;
+                } else{
+                    System.out.println("Invalid input.");
+                    continue;
+                }
+            } else{
+                System.out.println("Invalid input.");
+                continue;
+            }
+    }
+        
+
 
         setState(new HomeState());
         
@@ -105,9 +148,60 @@ public void saveGame(String file) {
         System.err.println("❌ Tallennus epäonnistui: " + e.getMessage());
     }
 }
-    public void loadGame(String save){
-        if(save.equals("Save1")){
+    public void loadGame(String file){
+        
+            try {
+                byte[] data = Files.readAllBytes(Paths.get(file + ".json"));
+                String jsonString = new String(data, StandardCharsets.UTF_8);
+                JSONObject saveData = new JSONObject(jsonString);
+                
+                
+                    String name = saveData.getString("name");
+                    double hp = saveData.getDouble("hp");
+                    String characterClass = saveData.getString("character type");
+                    double airDefence = saveData.getDouble("air defence");
+                    double fireDefence = saveData.getDouble("fire defence");
+                    double strength = saveData.getDouble("strength");
+                    double fishing = saveData.getDouble("fishing");
+                    double accuracy = saveData.getDouble("accuracy");
+                    double mining = saveData.getDouble("mining");
+                    double intelligence = saveData.getDouble("intelligence");
+                    double potionCrafting = saveData.getDouble("potion crafting");
+                    double smithing = saveData.getDouble("smithing");
+                    double earthDefence = saveData.getDouble("earth defence");
+                    double poisonDefence = saveData.getDouble("poison defence");
+                    double iceDefence = saveData.getDouble("ice defence");
+                    double vitality = saveData.getDouble("vitality");
+                    double crafting = saveData.getDouble("crafting");
+                    double cooking = saveData.getDouble("cooking");
+                    double thieving = saveData.getDouble("thieving");
+
+                    hero.setName(name);
+                    hero.setCharacterClass(characterClass);
+                    hero.setHp(hp);
+                    hero.setAirDefence(airDefence);
+                    hero.setFireDefence(fireDefence);
+                    hero.setStrength(strength);
+                    hero.setFishing(fishing);
+                    hero.setAccuracy(accuracy);
+                    hero.setMining(mining);
+                    hero.setIntelligence(intelligence);
+                    hero.setPotionCrafting(potionCrafting);
+                    hero.setSmithing(smithing);
+                    hero.setEarthDefence(earthDefence);
+                    hero.setPoisonDefence(poisonDefence);
+                    hero.setIceDefence(iceDefence);
+                    hero.setVitality(vitality);
+                    hero.setCrafting(crafting);
+                    hero.setCooking(cooking);
+                    hero.setThieving(thieving);
+                
+        
+            } catch(Exception e){
+                System.out.println(e);
+            }
+
 
         }
-    }
+    
 }
