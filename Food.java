@@ -14,7 +14,7 @@ public class Food {
     public double getHp(){
         return this.hp;
     }
-    public class FoodBuilder{
+    public static class FoodBuilder{
         
         private String name;
         private double hp;

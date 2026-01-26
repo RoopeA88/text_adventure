@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.ArrayList;
+
 public class Inventory {
     
     ArrayList<Sword> swordInventory = new ArrayList<>();
@@ -27,6 +27,14 @@ public class Inventory {
     private int adamantite = 0;
     private int runite = 0;
 
+    private int shrimp = 0;
+    private int herring = 0;
+    private int rainbowfish = 0;
+    private int bass = 0;
+    private int lobster = 0;
+    private int tuna = 0;
+    private int shark = 0;
+
     public Inventory(){
 
     }
@@ -39,7 +47,12 @@ public class Inventory {
         swordInventory.add(sword_);
         }
     }
-
+    public ArrayList<Food> getFoodInventory(){
+        return foodInventory;
+    }
+    public int getFoodInventoryLength(){
+        return foodInventory.size();
+    }
     public int getIronOre(){
         return this.ironOre;
     }
@@ -91,5 +104,104 @@ public class Inventory {
         System.out.println("You managed to mine some runite.");
         runite+=1;
     }
+    public int getShrimp(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("shrimp")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeShrimp(){
+        Food shrimp = new Food.FoodBuilder().name("shrimp").hp(2).build();
+        foodInventory.add(shrimp);
+        System.out.println("You managed to catch a shrimp");
+    }
+    public int getHerring(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("herring")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeHerring(){
+        Food herring = new Food.FoodBuilder().name("herring").hp(3).build();
+        foodInventory.add(herring);
+        System.out.println("You managed to catch a herring.");
+    }
+    public int getRainbowfish(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("rainbowfish")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeRainbowfish(){
+        Food rainbowfish = new Food.FoodBuilder().name("rainbowfish").hp(5).build();
+        foodInventory.add(rainbowfish);
+        System.out.println("You managed to catch a rainbowfish.");
+    }
+    public int getBass(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("bass")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeBass(){
+        Food bass = new Food.FoodBuilder().name("bass").hp(6).build();
+        foodInventory.add(bass);
+        System.out.println("You managed to catch a bass.");
+    }
+    public int getLobster(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("lobster")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeLobster(){
+        Food lobster = new Food.FoodBuilder().name("lobster").hp(8).build();
+        foodInventory.add(lobster);
+        System.out.println("You managed to catch a lobster.");
+    }
+    public int getTuna(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("tuna")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeTuna(){
+        Food tuna = new Food.FoodBuilder().name("tuna").hp(10).build();
+        foodInventory.add(tuna);
+        System.out.println("You managed to catch a tuna.");
+    }
+    public int getShark(){
+        int counter = 0;
+        for(int i = 0; i<foodInventory.size(); i++){
+            if(foodInventory.get(i).getName().equals("shark")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeShark(){
+        Food shark = new Food.FoodBuilder().name("shark").hp(15).build();
+        foodInventory.add(shark);
+        System.out.println("You managed to catch a shark.");
+    }
+    
 
 }

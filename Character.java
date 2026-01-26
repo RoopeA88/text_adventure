@@ -12,7 +12,7 @@ public class Character {
     private double iceDefence;
     private double earthDefence;
     private double airDefence;
-    private String position;
+    
     private double strength;
     private double intelligence;
     private double vitality;
@@ -123,7 +123,7 @@ public class Character {
         return this.hp;
     }
     public double getStrength(){
-        return this.hp;
+        return this.strength;
     }
     public double getVitality(){
         return this.vitality;
@@ -225,25 +225,66 @@ public class Character {
                 break;
             case "smithing":
                 smithing+=0.01;
+                System.out.println("Current smithing level: "+getSmithing());
                 break;
             case "fishing":
                 fishing+=0.01;
+                System.out.println("Current fishing level: "+getFishing());
                 break;
             case "cooking":
                 cooking+=0.01;
+                System.out.println("Current cooking level: "+getCooking());
                 break;
             case "crafting":
                 crafting+=0.01;
+                System.out.println("Current crafting level: "+getCrafting());
                 break;
             case "potion crafting":
                 potionCrafting+=0.01;
+                System.out.println("Current potion crafting level: "+getPotionCrafting());
                 break;
             case "thieving":
                 thieving+=0.01;
+                System.out.println("Current thieving level: "+ getThieving());
                 break;
             default:
                 System.out.println("Error, incorrect attribute");
                 break;
         }
+    }
+        public void eatFish(String fish){
+        double hpFromFish = 0;
+        if(fish.equals("shrimp")){
+            hpFromFish = 2;
+        } else if(fish.equals("herring")){
+            hpFromFish = 3;
+        } else if(fish.equals("rainbowfish")){
+            hpFromFish = 5;
+        } else if(fish.equals("bass")){
+            hpFromFish = 6;
+        } else if(fish.equals("lobster")){
+            hpFromFish = 8;
+        } else if(fish.equals("tuna")){
+            hpFromFish = 10;
+        } else if(fish.equals("shark")){
+            hpFromFish = 15;
+        } else{
+            System.out.println("Error, no such fish.");
+            return;
+        }
+        
+        for(int i =0; i<inventory.foodInventory.size(); i++){
+            if(inventory.foodInventory.get(i).getName().equals(fish)){
+                System.out.println("You ate a "+inventory.foodInventory.get(i).getName()+ " and gained "+hpFromFish+"hp.");
+                
+                inventory.foodInventory.remove(i);
+                this.hp+=hpFromFish;
+                return;
+                
+            }
+        }
+        
+        
+        
     }
 }

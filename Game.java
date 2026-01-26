@@ -1,14 +1,14 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Locale;
+
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.util.ArrayList;
 import java.nio.file.Paths;
 import java.util.Scanner;
-
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Game {
     private GameState currentState;
@@ -95,8 +95,16 @@ public void saveGame(String file) {
     try {
         
         JSONObject json = new JSONObject();
+        ArrayList<Food> foodArray = hero.inventory.getFoodInventory();
+        List<Map<String, Double>> foodList = new ArrayList<>();
         
+        for(int i = 0; i<foodArray.size(); i++){
+            Map<String, Double> foodMap = new HashMap<>();
+            foodMap.put(foodArray.get(i).getName(), foodArray.get(i).getHp());
+            foodList.add(foodMap);
+        }
         
+        json.put("foods", foodList);
         
         json.put("name", hero.getName());
         json.put("character type", hero.getCharacterClass());

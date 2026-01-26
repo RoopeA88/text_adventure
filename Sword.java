@@ -35,6 +35,9 @@ public class Sword implements WeaponInterface{
     public String getQuality(){
         return this.quality;
     }
+    public String getCharacter(){
+        return this.character;
+    }
 
     public static class SwordBuilder{
 

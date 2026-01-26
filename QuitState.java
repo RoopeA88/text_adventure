@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class QuitState implements GameState {
     @Override
     public void execute(Game game) {
-        Scanner scanner = new Scanner(System.in);
+        
         System.out.println("Choose a save slot 1-5: ");
-        int slot = scanner.nextInt();
+        int slot = game.scanner.nextInt();
         switch(slot){
             case 1:
                 game.saveGame("Save1");
@@ -29,5 +29,6 @@ public class QuitState implements GameState {
 
         
         game.stop();
+        game.scanner.close();
     }
 }
