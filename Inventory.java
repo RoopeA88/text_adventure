@@ -18,22 +18,11 @@ public class Inventory {
 
     ArrayList<Potion> potionInventory = new ArrayList<>();
     ArrayList<Food> foodInventory = new ArrayList<>();
+    ArrayList<Ore> oreInventory = new ArrayList<>();
 
-    private int ironOre = 0;
-    private int coal = 0;
-    private int silver = 0;
-    private int gold = 0;
-    private int mithril = 0;
-    private int adamantite = 0;
-    private int runite = 0;
+    private double goldCurrency;
 
-    private int shrimp = 0;
-    private int herring = 0;
-    private int rainbowfish = 0;
-    private int bass = 0;
-    private int lobster = 0;
-    private int tuna = 0;
-    private int shark = 0;
+    
 
     public Inventory(){
 
@@ -54,55 +43,104 @@ public class Inventory {
         return foodInventory.size();
     }
     public int getIronOre(){
-        return this.ironOre;
+        int counter = 0;
+        for(Ore ore: oreInventory){
+            if(ore.getName().equals("iron ore")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeIronOre(){
         System.out.println("You managed to mine some iron ore.");
 
-        ironOre+=1;
+        Ore ironOre = new Ore.OreBuilder().name("iron ore").build();
+        oreInventory.add(ironOre);
     }
+    
     public int getCoal(){
-        return this.coal;
+        int counter = 0;
+        for(Ore coal: oreInventory){
+            if(coal.getName().equals("coal")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeCoal(){
         System.out.println("You managed to mine some coal.");
 
-        coal+=1;
+        Ore coal = new Ore.OreBuilder().name("coal").build();
+        oreInventory.add(coal);
     }
     public int getSilver(){
-        return this.silver;
+        int counter = 0;
+        for(Ore ore : oreInventory){
+            if(ore.getName().equals("silver")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeSilver(){
         System.out.println("You managed to mine some silver.");
-        silver+=1;
+        Ore silver = new Ore.OreBuilder().name("silver").build();
+        oreInventory.add(silver);
     }
     public int getGold(){
-        return this.gold;
+        int counter = 0;
+        for(Ore ore : oreInventory){
+            if(ore.getName().equals("gold")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeGold(){
         System.out.println("You managed to mine some gold.");
-        gold+=1;
+        Ore gold = new Ore.OreBuilder().name("gold").build();
     }
     public int getMithril(){
-        return this.mithril;
+        int counter = 0;
+        for(Ore ore : oreInventory){
+            if(ore.getName().equals("mithril")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeMithril(){
         System.out.println("You managed to mine some mithril.");
-        mithril+=1;
+        Ore mithril = new Ore.OreBuilder().name("mithril").build();
+        oreInventory.add(mithril);
     }
     public int getAdamantite(){
-        return this.adamantite;
+        int counter = 0;
+        for(Ore ore : oreInventory){
+            if(ore.getName().equals("adamantite")){
+                counter++;
+            }
+        }
+        return counter;
     }
     public void takeAdamantite(){
         System.out.println("You managed to mine some adamantite.");
-        adamantite+=1;
+        Ore adamantite = new Ore.OreBuilder().name("adamantite").build();
+        oreInventory.add(adamantite);
     }
     public int getRunite(){
-        return this.runite;
+        int count = 0;
+        for(Ore ore: oreInventory){
+            if(ore.getName().equals("runite")){
+                count++;
+            }
+        }
+        return count;
     }
     public void takeRunite(){
         System.out.println("You managed to mine some runite.");
-        runite+=1;
+        Ore runite = new Ore.OreBuilder().name("runite").build();
+        oreInventory.add(runite);
     }
     public int getShrimp(){
         int counter = 0;
@@ -202,6 +240,305 @@ public class Inventory {
         foodInventory.add(shark);
         System.out.println("You managed to catch a shark.");
     }
-    
+    public double getGoldCurrency(){
+        return this.goldCurrency;
+    }
+    public void takeGoldCurrency(double sum){
+        goldCurrency+=sum;
+    }
+    public int getMinorHpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor hp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorHpPotion(){
+        System.out.println("You received a minor hp potion.");
+        Potion minorHp = new Potion.PotionBuilder().name("minor hp potion").hp(10).mp(0).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(minorHp);
+    }
+    public int getHpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("hp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeHpPotion(){
+        System.out.println("You received an hp potion.");
+        Potion hpPotion = new Potion.PotionBuilder().name("hp potion").hp(30).mp(0).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(hpPotion);
+    }
+    public int getGreaterHpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater hp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterHpPotion(){
+        System.out.println("You received a greater hp potion.");
+        Potion greaterHp = new Potion.PotionBuilder().name("greater hp potion").hp(70).mp(0).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(greaterHp);
+    }
+    public int getMinorMpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor mp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorHpPotionMp(){
+        System.out.println("You received a minor mp potion.");
+        Potion minorMp = new Potion.PotionBuilder().name("minor mp potion").hp(0).mp(10).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(minorMp);
+    }
+    public int getMpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("mp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMpPotion(){
+        System.out.println("You received an mp potion.");
+        Potion mpPotion = new Potion.PotionBuilder().name("mp potion").hp(0).mp(30).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(mpPotion);
+    }
+    public int getGreaterMpPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater mp potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterMpPotion(){
+        System.out.println("You received a greater mp potion.");
+        Potion greaterMp = new Potion.PotionBuilder().name("greater mp potion").hp(0).mp(70).poison(0).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(greaterMp);
+    }
+    public int getMinorFirePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor fire resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorFirePotion(){
+        System.out.println("You received a minor fire resistance potion.");
+        Potion minorFire = new Potion.PotionBuilder().name("minor fire resistance potion").hp(0).mp(0).poison(0).earth(0).fire(5).ice(0).air(0).build();
+        potionInventory.add(minorFire);
+    }
+    public int getFirePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("fire resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeFirePotion(){
+        System.out.println("You received a fire resistance potion.");
+        Potion firePotion = new Potion.PotionBuilder().name("fire resistance potion").hp(0).mp(0).poison(0).earth(0).fire(15).ice(0).air(0).build();
+        potionInventory.add(firePotion);
+    }
+    public int getGreaterFirePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater fire resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterFirePotion(){
+        System.out.println("You received a greater fire resistance potion.");
+        Potion greaterFire = new Potion.PotionBuilder().name("greater fire resistance potion").hp(0).mp(0).poison(0).earth(0).fire(30).ice(0).air(0).build();
+        potionInventory.add(greaterFire);
+    }
+    public int getMinorPoisonPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor poison resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorPoisonPotion(){
+        System.out.println("You received a minor poison resistance potion.");
+        Potion minorPoison = new Potion.PotionBuilder().name("minor poison resistance potion").hp(0).mp(0).poison(5).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(minorPoison);
+    }
+    public int getPoisonPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("poison resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takePoisonPotion(){
+        System.out.println("You received a poison resistance potion.");
+        Potion poisonPotion = new Potion.PotionBuilder().name("poison resistance potion").hp(0).mp(0).poison(15).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(poisonPotion);
+    }
+    public int getGreaterPoisonPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater poison resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterPoisonPotion(){
+        System.out.println("You received a greater poison resistance potion.");
+        Potion greaterPoison = new Potion.PotionBuilder().name("greater poison resistance potion").hp(0).mp(0).poison(30).earth(0).fire(0).ice(0).air(0).build();
+        potionInventory.add(greaterPoison);
+    }
+    public int getMinorEarthPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor earth resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorEarthPotion(){
+        System.out.println("You received a minor earth resistance potion.");
+        Potion minorEarth = new Potion.PotionBuilder().name("minor earth resistance potion").hp(0).mp(0).poison(0).earth(5).fire(0).ice(0).air(0).build();
+        potionInventory.add(minorEarth);
+    }
+    public int getEarthPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("earth resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeEarthPotion(){
+        System.out.println("You received an earth resistance potion.");
+        Potion earthPotion = new Potion.PotionBuilder().name("earth resistance potion").hp(0).mp(0).poison(0).earth(15).fire(0).ice(0).air(0).build();
+        potionInventory.add(earthPotion);
+    }
+    public int getGreaterEarthPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater earth resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterEarthPotion(){
+        System.out.println("You received a greater earth resistance potion.");
+        Potion greaterEarth = new Potion.PotionBuilder().name("greater earth resistance potion").hp(0).mp(0).poison(0).earth(30).fire(0).ice(0).air(0).build();
+        potionInventory.add(greaterEarth);
+    }
+    public int getMinorIcePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor ice resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorIcePotion(){
+        System.out.println("You received a minor ice resistance potion.");
+        Potion minorIce = new Potion.PotionBuilder().name("minor ice resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(5).air(0).build();
+        potionInventory.add(minorIce);
+    }
+    public int getIcePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("ice resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeIcePotion(){
+        System.out.println("You received an ice resistance potion.");
+        Potion icePotion = new Potion.PotionBuilder().name("ice resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(15).air(0).build();
+        potionInventory.add(icePotion);
+    }
+    public int getGreaterIcePotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater ice resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterIcePotion(){
+        System.out.println("You received a greater ice resistance potion.");
+        Potion greaterIce = new Potion.PotionBuilder().name("greater ice resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(30).air(0).build();
+        potionInventory.add(greaterIce);
+    }
+    public int getMinorAirPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("minor air resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeMinorAirPotion(){
+        System.out.println("You received a minor air resistance potion.");
+        Potion minorAir = new Potion.PotionBuilder().name("minor air resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(0).air(5).build();
+        potionInventory.add(minorAir);
+    }
+    public int getAirPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("air resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeAirPotion(){
+        System.out.println("You received an air resistance potion.");
+        Potion airPotion = new Potion.PotionBuilder().name("air resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(0).air(15).build();
+        potionInventory.add(airPotion);
+    }
+    public int getGreaterAirPotion(){
+        int counter = 0;
+        for(Potion potion : potionInventory){
+            if(potion.getName().equals("greater air resistance potion")){
+                counter++;
+            }
+        }
+        return counter;
+    }
+    public void takeGreaterAirPotion(){
+        System.out.println("You received a greater air resistance potion.");
+        Potion greaterAir = new Potion.PotionBuilder().name("greater air resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(0).air(30).build();
+        potionInventory.add(greaterAir);
+    }
 
 }

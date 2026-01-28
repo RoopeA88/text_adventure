@@ -1,6 +1,6 @@
 
 import org.json.JSONObject;
-
+import org.json.JSONArray;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -183,6 +183,17 @@ public void saveGame(String file) {
                     double crafting = saveData.getDouble("crafting");
                     double cooking = saveData.getDouble("cooking");
                     double thieving = saveData.getDouble("thieving");
+                    JSONArray foods = saveData.getJSONArray("foods");
+                    
+                    for(int i = 0; i<foods.length();i++){
+                        JSONObject foodObj = foods.getJSONObject(i);
+                        for(String key: foodObj.keySet()){
+                            double value = foodObj.getDouble(key);
+                            Food foodItem = new Food.FoodBuilder().name(key).hp(value).build();
+                            hero.inventory.foodInventory.add(foodItem);
+                        }
+                        
+                    }
 
                     hero.setName(name);
                     hero.setCharacterClass(characterClass);

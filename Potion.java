@@ -43,7 +43,7 @@ public class Potion {
     public double getAir(){
         return this.air;
     }
-    public class PotionBuilder{
+    public static class PotionBuilder{
     private String name;
     private double hp;
     private double mp;

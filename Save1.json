@@ -4,16 +4,10 @@
   "fire defence": 0,
   "foods": [
     {"shrimp": 2},
-    {"shrimp": 2},
-    {"shrimp": 2},
-    {"shrimp": 2},
-    {"shrimp": 2},
-    {"shrimp": 2},
-    {"shrimp": 2},
     {"shrimp": 2}
   ],
   "strength": 0,
-  "fishing": 0.38,
+  "fishing": 1.09,
   "hp": 0,
   "accuracy": 0,
   "mining": 0.11,

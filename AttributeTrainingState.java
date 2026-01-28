@@ -32,76 +32,76 @@ public class AttributeTrainingState implements GameState {
                             game.hero.trainAttribute("mining");
                             if(game.hero.getMining() <= 4 && game.hero.getMining()<5){
                                 
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     
                                     game.hero.inventory.takeIronOre();
                                 }
                             } else if(game.hero.getMining() >=5 && game.hero.getMining() <=9){
 
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum>30 && randomNum <=45){ 
+                                } else if(randomNum>10 && randomNum <=17){ 
                                     game.hero.inventory.takeCoal();  
                                 }
                             } else if(game.hero.getMining() >=10 && game.hero.getMining() <=14){
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum >30 && randomNum <=45){
+                                } else if(randomNum >10 && randomNum <=17){
                                     game.hero.inventory.takeCoal();
-                                } else if(randomNum >45 && randomNum <=55){
+                                } else if(randomNum >17 && randomNum <=23){
                                     game.hero.inventory.takeSilver();
                                 }
                             } else if(game.hero.getMining() >= 15 && game.hero.getMining() <=19){
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum >30 && randomNum <=45){
+                                } else if(randomNum >10 && randomNum <=17){
                                     game.hero.inventory.takeCoal();
-                                } else if(randomNum >45 && randomNum <=55){
+                                } else if(randomNum >17 && randomNum <=23){
                                     game.hero.inventory.takeSilver();
-                                } else if(randomNum >55 && randomNum <=63){
+                                } else if(randomNum >23 && randomNum <=28){
                                     game.hero.inventory.takeGold();
                                 }
                             } else if(game.hero.getMining() >=35 && game.hero.getMining() <=49){
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum >30 && randomNum <=45){
+                                } else if(randomNum >10 && randomNum <=17){
                                     game.hero.inventory.takeCoal();
-                                } else if(randomNum >45 && randomNum <=55){
+                                } else if(randomNum >17 && randomNum <=23){
                                     game.hero.inventory.takeSilver();
-                                } else if(randomNum >55 && randomNum <=63){
+                                } else if(randomNum >23 && randomNum <=28){
                                     game.hero.inventory.takeGold();
-                                } else if(randomNum >63 && randomNum <=68){
+                                } else if(randomNum >28 && randomNum <=32){
                                     game.hero.inventory.takeMithril();
                                 }
                             } else if(game.hero.getMining() >=50 && game.hero.getMining() <=84){
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum >30 && randomNum <=45){
+                                } else if(randomNum >10 && randomNum <=17){
                                     game.hero.inventory.takeCoal();
-                                } else if(randomNum >45 && randomNum <=55){
+                                } else if(randomNum >17 && randomNum <=23){
                                     game.hero.inventory.takeSilver();
-                                } else if(randomNum >55 && randomNum <=63){
+                                } else if(randomNum >23 && randomNum <=28){
                                     game.hero.inventory.takeGold();
-                                } else if(randomNum >63 && randomNum <=68){
+                                } else if(randomNum >28 && randomNum <=32){
                                     game.hero.inventory.takeMithril();
-                                } else if(randomNum >68 && randomNum <=71){
+                                } else if(randomNum >32 && randomNum <=35){
                                     game.hero.inventory.takeAdamantite();
                                 }
                             } else if(game.hero.getMining() >=85){
-                                if(randomNum <=30){
+                                if(randomNum <=10){
                                     game.hero.inventory.takeIronOre();
-                                } else if(randomNum >30 && randomNum <=45){
+                                } else if(randomNum >10 && randomNum <=17){
                                     game.hero.inventory.takeCoal();
-                                } else if(randomNum >45 && randomNum <=55){
+                                } else if(randomNum >17 && randomNum <=23){
                                     game.hero.inventory.takeSilver();
-                                } else if(randomNum >55 && randomNum <=63){
+                                } else if(randomNum >23 && randomNum <=28){
                                     game.hero.inventory.takeGold();
-                                } else if(randomNum >63 && randomNum <=68){
+                                } else if(randomNum >28 && randomNum <=32){
                                     game.hero.inventory.takeMithril();
-                                } else if(randomNum >68 && randomNum <=71){
+                                } else if(randomNum >32 && randomNum <=35){
                                     game.hero.inventory.takeAdamantite();
-                                } else if(randomNum == 72){
+                                } else if(randomNum == 36){
                                     game.hero.inventory.takeRunite();
                                 }
                             }
@@ -137,74 +137,74 @@ public class AttributeTrainingState implements GameState {
                                 game.hero.trainAttribute("fishing");
                                 System.out.println("Press Enter to fish. To exit fishing, type 'quit' ");
                                 if(game.hero.getFishing() <=4){
-                                    if(randomNumber <=30){
+                                    if(randomNumber <=10){
                                         game.inventory.takeShrimp();
                                     }
                                 } else if(game.hero.getFishing() >=5 && game.hero.getFishing() <=9){
-                                    if(randomNumber <=30){
+                                    if(randomNumber <=10){
                                         game.inventory.takeShrimp();
                                     }
-                                    else if(randomNumber >30 && randomNumber <=45){
+                                    else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
                                     }
                                 } else if(game.hero.getFishing() >=10 && game.hero.getFishing() <=14){
-                                    if(randomNumber <= 30){
+                                    if(randomNumber <= 10){
                                         game.inventory.takeShrimp();
-                                    } else if(randomNumber >30 && randomNumber <=45){
+                                    } else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
-                                    } else if(randomNumber >45 && randomNumber <=55){
+                                    } else if(randomNumber >17 && randomNumber <=23){
                                         game.inventory.takeRainbowfish();
                                     }
                                 } else if(game.hero.getFishing() >=15 && game.hero.getFishing() <=19){
-                                    if(randomNumber <= 30){
+                                    if(randomNumber <= 10){
                                         game.inventory.takeShrimp();
-                                    } else if(randomNumber >30 && randomNumber <=45){
+                                    } else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
-                                    } else if(randomNumber >45 && randomNumber <=55){
+                                    } else if(randomNumber >17 && randomNumber <=23){
                                         game.inventory.takeRainbowfish();
-                                    } else if(randomNumber >55 && randomNumber <=63){
+                                    } else if(randomNumber >23 && randomNumber <=28){
                                         game.inventory.takeBass();
                                     }
                                 } else if(game.hero.getFishing() >=35 && game.hero.getFishing() <=49){
-                                    if(randomNumber <= 30){
+                                    if(randomNumber <= 10){
                                         game.inventory.takeShrimp();
-                                    } else if(randomNumber >30 && randomNumber <=45){
+                                    } else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
-                                    } else if(randomNumber >45 && randomNumber <=55){
+                                    } else if(randomNumber >17 && randomNumber <=23){
                                         game.inventory.takeRainbowfish();
-                                    } else if(randomNumber >55 && randomNumber <=63){
+                                    } else if(randomNumber >23 && randomNumber <=28){
                                         game.inventory.takeBass();
-                                    } else if(randomNumber >63 && randomNumber <=68){
+                                    } else if(randomNumber >28 && randomNumber <=32){
                                         game.inventory.takeLobster();
                                     }
                                 } else if(game.hero.getFishing() >=50 && game.hero.getFishing() <=84){
-                                    if(randomNumber <= 30){
+                                    if(randomNumber <= 10){
                                         game.inventory.takeShrimp();
-                                    } else if(randomNumber >30 && randomNumber <=45){
+                                    } else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
-                                    } else if(randomNumber >45 && randomNumber <=55){
+                                    } else if(randomNumber >17 && randomNumber <=23){
                                         game.inventory.takeRainbowfish();
-                                    } else if(randomNumber >55 && randomNumber <=63){
+                                    } else if(randomNumber >23 && randomNumber <=28){
                                         game.inventory.takeBass();
-                                    } else if(randomNumber >63 && randomNumber <=68){
+                                    } else if(randomNumber >28 && randomNumber <=32){
                                         game.inventory.takeLobster();
-                                    } else if(randomNumber >68 && randomNumber <=71){
+                                    } else if(randomNumber >32 && randomNumber <=35){
                                         game.inventory.takeTuna();
                                     }
                                 } else if(game.hero.getFishing() >=85){
-                                    if(randomNumber <= 30){
+                                    if(randomNumber <= 10){
                                         game.inventory.takeShrimp();
-                                    } else if(randomNumber >30 && randomNumber <=45){
+                                    } else if(randomNumber >10 && randomNumber <=17){
                                         game.inventory.takeHerring();
-                                    } else if(randomNumber >45 && randomNumber <=55){
+                                    } else if(randomNumber >17 && randomNumber <=23){
                                         game.inventory.takeRainbowfish();
-                                    } else if(randomNumber >55 && randomNumber <=63){
+                                    } else if(randomNumber >23 && randomNumber <=28){
                                         game.inventory.takeBass();
-                                    } else if(randomNumber >63 && randomNumber <=68){
+                                    } else if(randomNumber >28 && randomNumber <=32){
                                         game.inventory.takeLobster();
-                                    } else if(randomNumber >68 && randomNumber <=71){
+                                    } else if(randomNumber >32 && randomNumber <=35){
                                         game.inventory.takeTuna();
-                                    } else if(randomNumber ==72){
+                                    } else if(randomNumber ==36){
                                         game.inventory.takeShark();
                                     }
                                 }
@@ -214,7 +214,47 @@ public class AttributeTrainingState implements GameState {
                             } else if(fish.equals("quit")){
                                 break;
                             }
-                        }
+                        } 
+                        case 4:
+                            while(true){
+                                String thieve = game.scanner.nextLine();
+                                int randomNumber = (int)(Math.random() *101);
+                                if(thieve.equals("")){
+                                    game.clearScreen();
+                                    System.out.println("Press Enter to thieve. To exit thieving, type 'quit' ");
+                                    System.out.println("You slip your hand in the pocket of an unsuspecting individual and try to find something of value.");
+                                    if(game.hero.getThieving() <=4){
+                                        if(randomNumber <=10){
+                                            game.hero.inventory.takeCopperCoin();
+                                        }
+                                    } else if(game.hero.getThieving() >=5 && game.hero.getThieving() <=9){
+                                        if(randomNumber <=10){
+                                            game.hero.inventory.takeCopperCoin();
+                                        } else if(randomNumber >10 && randomNumber <=17){
+                                            game.hero.inventory.takeSilverCoin();
+                                        }
+                                    } else if(game.hero.getThieving() >=10 && game.hero.getThieving() <=14){
+                                        if(randomNumber <=10){
+                                            game.hero.inventory.takeCopperCoin();
+                                        } else if(randomNumber >10 && randomNumber <=17){
+                                            game.hero.inventory.takeSilverCoin();
+                                        } else if(randomNumber >17 && randomNumber <=23){
+                                            game.hero.inventory.takeGoldCoin();
+                                        }
+                                    } else if(game.hero.getThieving() >=15 && game.hero.getThieving() <=19){
+                                        if(randomNumber <=10){
+                                            game.hero.inventory.takeCopperCoin();
+                                        } else if(randomNumber >10 && randomNumber <=17){
+                                            game.hero.inventory.takeSilverCoin();
+                                        } else if(randomNumber >17 && randomNumber <=23){
+                                            game.hero.inventory.takeGoldCoin();
+                                        } else if(randomNumber >23 && randomNumber <=28){
+                                            game.hero.inventory.takePlatinumCoin();
+
+
+                                }
+                            }
+
                         break;
             }
 
