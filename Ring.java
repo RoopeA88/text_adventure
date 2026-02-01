@@ -42,7 +42,7 @@ public class Ring {
     public String getQuality(){
         return this.quality;
     }
-    public class RingBuilder{
+    public static class RingBuilder{
 
     private String name;
     private int level;

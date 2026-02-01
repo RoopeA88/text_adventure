@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Inventory {
     
@@ -21,6 +22,7 @@ public class Inventory {
     ArrayList<Ore> oreInventory = new ArrayList<>();
 
     private double goldCurrency;
+    Scanner scanner = new Scanner(System.in);
 
     
 
@@ -297,7 +299,7 @@ public class Inventory {
         }
         return counter;
     }
-    public void takeMinorHpPotionMp(){
+    public void takeMinorMpPotion(){
         System.out.println("You received a minor mp potion.");
         Potion minorMp = new Potion.PotionBuilder().name("minor mp potion").hp(0).mp(10).poison(0).earth(0).fire(0).ice(0).air(0).build();
         potionInventory.add(minorMp);
@@ -539,6 +541,68 @@ public class Inventory {
         System.out.println("You received a greater air resistance potion.");
         Potion greaterAir = new Potion.PotionBuilder().name("greater air resistance potion").hp(0).mp(0).poison(0).earth(0).fire(0).ice(0).air(30).build();
         potionInventory.add(greaterAir);
+    }
+    public void takeRandomLevelOneRing(String element){
+        Ring poorRing = null;
+        if(element.equals("air")){
+            poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(0).fireDefence(0).earthDefence(0).poisonDefence(0).airDefence(5).quality("poor").build();
+        }
+        else if(element.equals("ice")){
+            poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(5).fireDefence(0).earthDefence(0).poisonDefence(0).airDefence(0).quality("poor").build();
+
+        } 
+        if(ringInventory.size() >10){
+            removeRing();
+            if(ringInventory.size() <10){
+                ringInventory.add(poorRing);
+                System.out.println("You picked up "+poorRing.getName());
+            } else{
+                System.out.println("You didn't take the ring");
+            }
+        }
+    }
+    
+    public void removeRing(){
+        int index = 0;
+        while(true){
+            
+            System.out.println("Press 1 to show the ring inventory. Press 2 to exit.");
+            int selection = scanner.nextInt();
+            scanner.nextLine();
+            switch(selection){
+                case 1:
+                    index = 0;
+                    for(Ring ring:ringInventory){
+                        System.out.println(ring.getName()+ index );
+                        index++;
+                    }
+                    System.out.println("If you want to delete ring, press it's index number");
+                    int delete = scanner.nextInt();
+                    scanner.nextLine();
+                    if(delete >=0 && delete <ringInventory.size()){
+                        
+                        ringInventory.remove(delete);
+                        System.out.println("Ring removed succesfully");
+                        
+                        break;
+                        
+                    } else{
+                        System.out.println("invalid index number.");
+                        break;
+                    }
+                    
+                    
+            
+                case 2: 
+                    return;
+
+                default:
+                    System.out.println("Choose between 1 or 2!");
+                    break;
+
+
+            }
+        }
     }
 
 }
