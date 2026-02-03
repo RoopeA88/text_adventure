@@ -170,7 +170,7 @@ public class Inventory {
         return counter;
     }
     public void takeHerring(){
-        Food herring = new Food.FoodBuilder().name("herring").hp(3).build();
+        Food herring = new Food.FoodBuilder().name("herring").hp(5).build();
         foodInventory.add(herring);
         System.out.println("You managed to catch a herring.");
     }
@@ -184,7 +184,7 @@ public class Inventory {
         return counter;
     }
     public void takeRainbowfish(){
-        Food rainbowfish = new Food.FoodBuilder().name("rainbowfish").hp(5).build();
+        Food rainbowfish = new Food.FoodBuilder().name("rainbowfish").hp(7).build();
         foodInventory.add(rainbowfish);
         System.out.println("You managed to catch a rainbowfish.");
     }
@@ -198,7 +198,7 @@ public class Inventory {
         return counter;
     }
     public void takeBass(){
-        Food bass = new Food.FoodBuilder().name("bass").hp(6).build();
+        Food bass = new Food.FoodBuilder().name("bass").hp(10).build();
         foodInventory.add(bass);
         System.out.println("You managed to catch a bass.");
     }
@@ -212,7 +212,7 @@ public class Inventory {
         return counter;
     }
     public void takeLobster(){
-        Food lobster = new Food.FoodBuilder().name("lobster").hp(8).build();
+        Food lobster = new Food.FoodBuilder().name("lobster").hp(13).build();
         foodInventory.add(lobster);
         System.out.println("You managed to catch a lobster.");
     }
@@ -226,7 +226,7 @@ public class Inventory {
         return counter;
     }
     public void takeTuna(){
-        Food tuna = new Food.FoodBuilder().name("tuna").hp(10).build();
+        Food tuna = new Food.FoodBuilder().name("tuna").hp(16).build();
         foodInventory.add(tuna);
         System.out.println("You managed to catch a tuna.");
     }
@@ -240,7 +240,7 @@ public class Inventory {
         return counter;
     }
     public void takeShark(){
-        Food shark = new Food.FoodBuilder().name("shark").hp(15).build();
+        Food shark = new Food.FoodBuilder().name("shark").hp(20).build();
         foodInventory.add(shark);
         System.out.println("You managed to catch a shark.");
     }
