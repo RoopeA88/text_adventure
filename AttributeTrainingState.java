@@ -225,6 +225,8 @@ public class AttributeTrainingState implements GameState {
                                 int randomResistancePotionNumber = (int) (Math.random() *5);
                                 int randomPoorRingNumber = (int) (Math.random() * 2);
                                 int randomPoorRingLevel = (int) (Math.random() * 2);
+                                int randomNormalRingLevel = (int) (Math.random() * 2);
+                                int randomGreaterRingLevel = (int) (Math.random() * 2);
                                 List<String> potionList = List.of("mp","hp");
                                 List<String> resistancePotionList = List.of("air", "poison", "fire", "earth", "ice");
                                 if(thieve.equals("")){
@@ -268,13 +270,15 @@ public class AttributeTrainingState implements GameState {
                                             }
                                         } else if(randomNumber >50 && randomNumber <=53){
                                             if(randomPoorRingLevel == 0){
-                                                int randomPoorRingLevelOneElements = (int) (Math.random() *2);
-                                                if(randomPoorRingLevelOneElements == 0){
-                                                    String oneElement = resistancePotionList.get(randomResistancePotionNumber);
-                                                    if(oneElement.equals("air")){
-                                                        game.hero.inventory.takeRandomLevelOneRing("air");
-                                                    }
-                                                }
+                                                
+                                                String oneElement = resistancePotionList.get(randomResistancePotionNumber);
+                                                game.hero.inventory.takeRandomLevelOneRing(oneElement);
+                                                
+                                            } else if(randomPoorRingLevel == 1){
+                                                List<Integer> elementNumbersForLevelOneDouble = List.of(0,0,0,5,5);
+
+                                                    
+                                                game.hero.inventory.takeRandomLevelOneRingTwoElements(elementNumbersForLevelOneDouble);
                                             }
                                             
                                         }
@@ -309,6 +313,19 @@ public class AttributeTrainingState implements GameState {
                                             } else{
                                                 System.out.println("Error: Invalid resistance potion.");
                                             }
+                                        } else if(randomNumber >50 && randomNumber <=53){
+                                            if(randomPoorRingLevel == 0){
+                                                
+                                                String oneElement = resistancePotionList.get(randomResistancePotionNumber);
+                                                game.hero.inventory.takeRandomLevelOneRing(oneElement);
+                                                
+                                            } else if(randomPoorRingLevel == 1){
+                                                List<Integer> elementNumbersForLevelOneDouble = List.of(0,0,0,5,5);
+
+                                                    
+                                                game.hero.inventory.takeRandomLevelOneRingTwoElements(elementNumbersForLevelOneDouble);
+                                            }
+                                            
                                         }
                                     } else if(game.hero.getThieving() >=15 && game.hero.getThieving() <=19){
                                         if(randomNumber <=10){

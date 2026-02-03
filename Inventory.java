@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.List;
+
 
 public class Inventory {
     
@@ -550,8 +552,20 @@ public class Inventory {
         else if(element.equals("ice")){
             poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(5).fireDefence(0).earthDefence(0).poisonDefence(0).airDefence(0).quality("poor").build();
 
-        } 
-        if(ringInventory.size() >10){
+        }  else if(element.equals("poison")){
+            poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(0).fireDefence(0).earthDefence(0).poisonDefence(5).airDefence(0).quality("poor").build();
+
+        } else if(element.equals("earth")){
+            poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(0).fireDefence(0).earthDefence(5).poisonDefence(0).airDefence(0).quality("poor").build();
+
+        } else if(element.equals("fire")){
+            poorRing = new Ring.RingBuilder().name("poor elemental "+element+" ring").level(1).iceDefence(0).fireDefence(5).earthDefence(0).poisonDefence(0).airDefence(0).quality("poor").build();
+
+        }
+        
+        if(ringInventory.size() >=10){
+            System.out.println("You found "+poorRing.getName()+" but your inventory is full.");
+            System.out.println("Delete a ring to pick it up.");
             removeRing();
             if(ringInventory.size() <10){
                 ringInventory.add(poorRing);
@@ -560,6 +574,62 @@ public class Inventory {
                 System.out.println("You didn't take the ring");
             }
         }
+    }
+
+    public String takeRandomLevelOneRingTwoElements(List<Integer> numbers){
+        StringBuilder name = new StringBuilder();
+        String firstPartOfName = "poor elemental ";
+        name.append(firstPartOfName);
+        Ring poorRing = null;
+        int number1;
+        int number2;
+        int number3;
+        int number4;
+        int number5;
+
+        while(true){
+            number1 = numbers.get((int)(Math.random() * 5));
+            number2 = numbers.get((int)(Math.random() * 5));
+            number3 = numbers.get((int)(Math.random() * 5));
+            number4 = numbers.get((int)(Math.random() * 5));
+            number5 = numbers.get((int)(Math.random() * 5));
+            if(number1+number2+number3+number4+number5 == 10){
+                if(number1 == 5){
+                    name.append("ice ");
+                } if(number2 == 5){
+                    name.append("fire ");
+                } if(number3 == 5){
+                    name.append("earth ");
+                } if(number4 == 5){
+                    name.append("poison ");
+                } if(number5 == 5){
+                    name.append("air ");
+                }
+                name.append("potion");
+                int firstSpace = name.indexOf(" ");
+                int secondSpace = name.indexOf(" ", firstSpace+1);
+                int thirdSpace = name.indexOf(" ", secondSpace+1);
+                
+                name.insert(thirdSpace+1, "and ");
+                // poor elemental fire and ice potion
+                break;
+            }
+        }
+        poorRing = new Ring.RingBuilder().name(name.toString()).level(1).iceDefence(number1).fireDefence(number2).earthDefence(number3).poisonDefence(number4).airDefence(number5).quality("poor").build();
+
+        
+        if(ringInventory.size() >=10){
+            System.out.println("You found "+poorRing.getName()+" but your inventory is full.");
+            System.out.println("Delete a ring to pick it up.");
+            removeRing();
+            if(ringInventory.size() <10){
+                ringInventory.add(poorRing);
+                System.out.println("You picked up "+poorRing.getName());
+            } else{
+                System.out.println("You didn't take the ring");
+            }
+        }
+        return poorRing.getName() + " "+poorRing.getLevel()+" "+poorRing.getIceDefence()+" "+ poorRing.getFireDefence()+" "+ poorRing.getEarthDefence()+" "+poorRing.getPoisonDefence()+" "+poorRing.getAirDefence()+" "+ poorRing.getQuality();
     }
     
     public void removeRing(){
@@ -573,19 +643,22 @@ public class Inventory {
                 case 1:
                     index = 0;
                     for(Ring ring:ringInventory){
-                        System.out.println(ring.getName()+ index );
+                        System.out.println(ring.toString()+ " index: "+index );
                         index++;
                     }
-                    System.out.println("If you want to delete ring, press it's index number");
+                    System.out.println("If you want to delete ring, press it's index number. type -1 to quit");
                     int delete = scanner.nextInt();
                     scanner.nextLine();
                     if(delete >=0 && delete <ringInventory.size()){
-                        
+
+                        String ringName = ringInventory.get(delete).getName();
                         ringInventory.remove(delete);
-                        System.out.println("Ring removed succesfully");
+                        System.out.println(ringName+" removed successfully from inventory");
                         
                         break;
                         
+                    } else if(delete == -1){
+                        break;
                     } else{
                         System.out.println("invalid index number.");
                         break;
@@ -604,5 +677,6 @@ public class Inventory {
             }
         }
     }
+    
 
 }

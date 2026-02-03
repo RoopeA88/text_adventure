@@ -1,7 +1,7 @@
 public class Ring {
     private String name;
-    private int level;
-    private double iceDefence;
+    private int level; 
+    private double iceDefence; 
     private double fireDefence;
     private double earthDefence;
     private double poisonDefence;
@@ -41,6 +41,9 @@ public class Ring {
     }
     public String getQuality(){
         return this.quality;
+    }
+    public String toString(){
+        return this.getName()+" level: "+this.getLevel()+" "+ "ice: "+this.getIceDefence()+" fire: "+this.getFireDefence()+" earth: "+this.getEarthDefence()+ "poison: "+this.getPoisonDefence()+" air: "+this.getAirDefence()+" quality: "+this.getQuality();
     }
     public static class RingBuilder{
 
