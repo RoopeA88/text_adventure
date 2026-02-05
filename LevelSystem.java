@@ -34,4 +34,60 @@ public class LevelSystem {
     //* Fishing Level   105 tuna            HP 16
     //* Fishing Level   125 shark           HP 20
 
+    //? minor hp potion                                 HP 5
+    //? minor mp potion                                 MP 2
+    //? minor level 1 elemental resistance potion       EL 5 one element
+    //? minor level 2 elemental resistance potion       EL 5 two elements
+    //? minor level 3 elemental resistance potion       EL 5 three elements
+    //? minor level 4 elemental resistance potion       EL 5 four elements
+    //? minor level 5 elemental resistance potion       EL 5 five elements
+    
+    //? lesser hp potion                                HP 11
+    //? Lesser mp potion                                MP 4
+    //? lesser level 1 elemental resistance potion      EL 11 one element
+    //? lesser level 2 elemental resistance potion      EL 11 two elements
+    //? lesser level 3 elemental resistance potion      EL 11 three elements
+    //? lesser level 4 elemental resistance potion      EL 11 four elements
+    //? lesser level 5 elemental resistance potion      EL 11 five elements
+    
+    //? common hp potion                                HP 18
+    //? common mp potion                                MP 7
+    //? common level 1 elemental resistance potion      EL 18 one element
+    //? common level 2 elemental resistance potion      EL 18 two elements
+    //? common level 3 elemental resistance potion      EL 18 three elements
+    //? common level 4 elemental resistance potion      EL 18 four elements
+    //? common level 5 elemental resistance potion      EL 18 five elements
+
+    //? improved hp potion                              HP 25
+    //? improved mp potion                              MP 9
+    //? improved level 1 elemental resistance potion    EL 25 one element
+    //? improved level 2 elemental resistance potion    EL 25 two elements
+    //? improved level 3 elemental resistance potion    EL 25 three elements
+    //? improved level 4 elemental resistance potion    EL 25 four elements
+    //? improved level 5 elemental resistance potion    EL 25 five elements
+
+    //? major hp potion                                 HP 31
+    //? major mp potion                                 MP 31
+    //? major level 1 elemental resistance potion       EL 31 one element
+    //? major level 2 elemental resistance potion       EL 31 two elements
+    //? major level 3 elemental resistance potion       EL 31 three elements
+    //? major level 4 elemental resistance potion       EL 31 four elements
+    //? major level 5 elemental resistance potion       EL 31 five elements
+
+    //? superior hp potion                              HP 38
+    //? superior mp potion                              MP 38
+    //? superior level 1 elemental resistance potion    EL 38 one element
+    //? superior level 2 elemental resistance potion    EL 38 two elements
+    //? superior level 3 elemental resistance potion    EL 38 three elements
+    //? superior level 4 elemental resistance potion    EL 38 four elements
+    //? superior level 5 elemental resistance potion    EL 38 five elements
+
+    //? greater hp potion                               HP 45
+    //? greater mp potion                               MP 45
+    //? greater level 1 elemental resistance potion     EL 45 one element
+    //? greater level 2 elemental resistance potion     EL 45 two elements
+    //? greater level 3 elemental resistance potion     EL 45 three elements
+    //? greater level 4 elemental resistance potion     EL 45 four elements
+    //? greater level 5 elemental resistance potion     EL 45 five elements
+    
 }

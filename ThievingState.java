@@ -1,3 +1,4 @@
+import java.lang.Thread.State;
 import java.util.List;
 
 public class ThievingState implements GameState {
@@ -359,6 +360,7 @@ public class ThievingState implements GameState {
                     } 
                 } 
             } else if(thieve.equals("quit")){
+                game.setState(new AttributeTrainingState());
                 break;
             }
     
