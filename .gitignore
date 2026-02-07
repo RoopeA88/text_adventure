@@ -1,6 +1,13 @@
+# C:\tekstipeli\.gitignore
 
+# =============== IDE ===============
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
 
-# Maven
+# =============== Maven ===============
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -12,7 +19,14 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# JAR-tiedostot
+# =============== Gradle ===============
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# =============== Compiled ===============
+bin/
+*.class
 *.jar
 *.war
 *.ear
@@ -20,46 +34,13 @@ buildNumber.properties
 *.tar.gz
 *.rar
 
-# Luokkafileet
-*.class
-
-# IDE-tiedostot
-.vscode/
-.idea/
-*.iml
-*.ipr
-*.iws
-
-# Käyttäjäkohtaiset asetukset
-*.prefs
-
-# Lokit
+# =============== Logs ===============
 *.log
 logs/
 
-# Muut
+# =============== OS ===============
 .DS_Store
-Thumbs.db# Compiled class file
-*.class
+Thumbs.db
 
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# =============== Project specific ===============
+# Poista jos haluat pitää lib/-kansion
