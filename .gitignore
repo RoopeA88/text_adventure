@@ -1,4 +1,45 @@
-# Compiled class file
+
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# JAR-tiedostot
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Luokkafileet
+*.class
+
+# IDE-tiedostot
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Käyttäjäkohtaiset asetukset
+*.prefs
+
+# Lokit
+*.log
+logs/
+
+# Muut
+.DS_Store
+Thumbs.db# Compiled class file
 *.class
 
 # Log file
