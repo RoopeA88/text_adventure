@@ -15,6 +15,8 @@ public class ThievingState implements GameState {
             int randomNormalRingLevel = (int) (Math.random() * 2);
             int randomGreaterRingLevel = (int) (Math.random() * 2);
             List<String> potionList = List.of("mp","hp");
+            List<Integer> numberOfElementalProtection = List.of(1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4,5);
+            int elementalProctectionRandom = (int) (Math.random() * 22);
             List<String> resistancePotionList = List.of("air", "poison", "fire", "earth", "ice");
             if(thieve.equals("")){
                 game.clearScreen();
@@ -41,6 +43,7 @@ public class ThievingState implements GameState {
                             System.out.println("Error: invalid potion.");
                         }
                     } else if(randomNumber >40 && randomNumber <=44){
+                        if(numberOfElementalProtection.get(elementalProctectionRandom) == 1){
                         String elementalPotion = resistancePotionList.get(randomResistancePotionNumber);
                         if(elementalPotion.equals("air")){
                             game.hero.inventory.takeMinorAirPotion();
@@ -54,6 +57,7 @@ public class ThievingState implements GameState {
                             game.hero.inventory.takeMinorIcePotion();
                         } else{
                             System.out.println("Error: Invalid resistance potion.");
+                        }
                         }
                     } else if(randomNumber >50 && randomNumber <=53){
                         if(randomPoorRingLevel == 0){
@@ -196,15 +200,15 @@ public class ThievingState implements GameState {
                     } else if(randomNumber >=46 && randomNumber <=48 ){
                         String elementalPotion = resistancePotionList.get(randomResistancePotionNumber);
                         if(elementalPotion.equals("air")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("poison")){
-                            game.hero.inventory.takePoisonPotion();
+                            game.hero.inventory.takeCommonPoisonPotion();
                         } else if(elementalPotion.equals("earth")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("fire")){
-                            game.hero.inventory.takeFirePotion();
+                            game.hero.inventory.takeCommonFirePotion();
                         } else if(elementalPotion.equals("ice")){
-                            game.hero.inventory.takeIcePotion();
+                            game.hero.inventory.takeCommonIcePotion();
                         } else{
                             System.out.println("Error: Invalid resistance potion.");
                         }
@@ -258,15 +262,15 @@ public class ThievingState implements GameState {
                     } else if(randomNumber >=46 && randomNumber <=48 ){
                         String elementalPotion = resistancePotionList.get(randomResistancePotionNumber);
                         if(elementalPotion.equals("air")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("poison")){
-                            game.hero.inventory.takePoisonPotion();
+                            game.hero.inventory.takeCommonPoisonPotion();
                         } else if(elementalPotion.equals("earth")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("fire")){
-                            game.hero.inventory.takeFirePotion();
+                            game.hero.inventory.takeCommonFirePotion();
                         } else if(elementalPotion.equals("ice")){
-                            game.hero.inventory.takeIcePotion();
+                            game.hero.inventory.takeCommonIcePotion();
                         } else{
                             System.out.println("Error: Invalid resistance potion.");
                         }
@@ -321,15 +325,15 @@ public class ThievingState implements GameState {
                     } else if(randomNumber >=46 && randomNumber <=48 ){
                         String elementalPotion = resistancePotionList.get(randomResistancePotionNumber);
                         if(elementalPotion.equals("air")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("poison")){
-                            game.hero.inventory.takePoisonPotion();
+                            game.hero.inventory.takeCommonPoisonPotion();
                         } else if(elementalPotion.equals("earth")){
-                            game.hero.inventory.takeAirPotion();
+                            game.hero.inventory.takeCommonAirPotion();
                         } else if(elementalPotion.equals("fire")){
-                            game.hero.inventory.takeFirePotion();
+                            game.hero.inventory.takeCommonFirePotion();
                         } else if(elementalPotion.equals("ice")){
-                            game.hero.inventory.takeIcePotion();
+                            game.hero.inventory.takeCommonIcePotion();
                         } else{
                             System.out.println("Error: Invalid resistance potion.");
                         }

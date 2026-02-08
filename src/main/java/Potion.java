@@ -7,6 +7,8 @@ public class Potion {
     private double fire;
     private double ice;
     private double air;
+    private String quality;
+    private int level;
 
     private Potion(PotionBuilder potionBuilder){
         this.name = potionBuilder.name;
@@ -17,6 +19,8 @@ public class Potion {
         this.fire = potionBuilder.fire;
         this.ice = potionBuilder.ice;
         this.air = potionBuilder.air;
+        this.quality = potionBuilder.quality;
+        this.level = potionBuilder.level;
     }
 
     public String getName(){
@@ -43,6 +47,15 @@ public class Potion {
     public double getAir(){
         return this.air;
     }
+    public String getQuality(){
+        return this.quality;
+    }
+    public int getLevel(){
+        return this.level;
+    }
+    public String toString(){
+        return quality+ " level "+level +" "+ name+ " hp: "+this.getHp()+" mp: "+this.getMp()+" poison: "+this.getPoison()+ " earth: "+this.getEarth()+" fire: "+this.getFire()+" ice: "+this.getIce()+" air: "+this.getAir();
+    }
     public static class PotionBuilder{
     private String name;
     private double hp;
@@ -52,6 +65,8 @@ public class Potion {
     private double fire;
     private double ice;
     private double air;
+    private String quality;
+    private int level;
 
     public PotionBuilder name(String name_){
         this.name = name_;
@@ -83,6 +98,14 @@ public class Potion {
     }
     public PotionBuilder air(double air_){
         this.air = air_;
+        return this;
+    }
+    public PotionBuilder quality(String quality_){
+        this.quality = quality_;
+        return this;
+    }
+    public PotionBuilder level(int level_){
+        this.level = level_;
         return this;
     }
     public Potion build(){

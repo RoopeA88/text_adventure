@@ -34,7 +34,7 @@ public class LevelSystem {
     //* Fishing Level   105 tuna            HP 16
     //* Fishing Level   125 shark           HP 20
 
-    //? minor hp potion                                 HP 5
+    //? minor hp potion                                 HP 5 
     //? minor mp potion                                 MP 2
     //? minor level 1 elemental resistance potion       EL 5 one element
     //? minor level 2 elemental resistance potion       EL 5 two elements
@@ -67,7 +67,7 @@ public class LevelSystem {
     //? improved level 5 elemental resistance potion    EL 25 five elements
 
     //? major hp potion                                 HP 31
-    //? major mp potion                                 MP 31
+    //? major mp potion                                 MP 12
     //? major level 1 elemental resistance potion       EL 31 one element
     //? major level 2 elemental resistance potion       EL 31 two elements
     //? major level 3 elemental resistance potion       EL 31 three elements
@@ -75,7 +75,7 @@ public class LevelSystem {
     //? major level 5 elemental resistance potion       EL 31 five elements
 
     //? superior hp potion                              HP 38
-    //? superior mp potion                              MP 38
+    //? superior mp potion                              MP 14
     //? superior level 1 elemental resistance potion    EL 38 one element
     //? superior level 2 elemental resistance potion    EL 38 two elements
     //? superior level 3 elemental resistance potion    EL 38 three elements
@@ -83,11 +83,15 @@ public class LevelSystem {
     //? superior level 5 elemental resistance potion    EL 38 five elements
 
     //? greater hp potion                               HP 45
-    //? greater mp potion                               MP 45
+    //? greater mp potion                               MP 17
     //? greater level 1 elemental resistance potion     EL 45 one element
     //? greater level 2 elemental resistance potion     EL 45 two elements
     //? greater level 3 elemental resistance potion     EL 45 three elements
     //? greater level 4 elemental resistance potion     EL 45 four elements
     //? greater level 5 elemental resistance potion     EL 45 five elements
     
+    //* Potionit toimii niin, että kun otettu tarpeeksi sitä elementin damagea niin potion kuihtuu pois. Eli jos on 45 fire
+    //* resistance ja pelaaja ottaa 10+10+10+15 fire damagea potionin tuoma suoja on poissa.
+    //* Sormuksissa taas suoja pysyy. eli jos fire EL on 25 ja pelaaja ottaa 22 fire damagea (yksi isku), ei damagea tule. 
+    //* jos taas tulee 35 fire damagea (yksi isku) niin se on 10 damagea.
 }

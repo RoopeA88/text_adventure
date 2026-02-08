@@ -3,5 +3,6 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "json-20240303.jar"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
