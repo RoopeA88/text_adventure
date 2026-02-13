@@ -1,10 +1,18 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class PotionTest {
     Inventory inventory = new Inventory();
     @Test
     public void testIcePotions(){
+
+        
+        
+
+
         inventory.takeMinorIcePotion();
         inventory.takeLesserIcePotion();
         inventory.takeCommonIcePotion();
@@ -83,6 +91,9 @@ public class PotionTest {
         assertTrue("major ice resistance potion" == inventory.potionInventory.get(4).getName());
         assertTrue("superior ice resistance potion" == inventory.potionInventory.get(5).getName());
         assertTrue("greater ice resistance potion" == inventory.potionInventory.get(6).getName());
+
+        
+
     }
     @Test
     public void testFirePotions(){
@@ -416,6 +427,719 @@ public class PotionTest {
         assertTrue("greater poison resistance potion" == inventory.potionInventory.get(6).getName());
 
 
+    }
+    @Test
+    public void testIcePotionPrints(){
+        PrintStream originalOut = System.out;
+
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            
+            System.setOut(new PrintStream(baos));
+            inventory.takeMinorIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a minor ice resistance potion.",printedText);
+            baos.reset();
+        } finally{
+            System.setOut(originalOut);
+            
+        }
+        
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut(new PrintStream(baos));
+            inventory.takeLesserIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a lesser ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.setOut(originalOut);
+        }
+
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeCommonIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a common ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.setOut(originalOut);
+        }
+
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeImprovedIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received an improved ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeMajorIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a major ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeSuperiorIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a superior ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeGreaterIcePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a greater ice resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+    }
+    @Test
+    public void testFirePotionPrints(){
+        PrintStream originalOut = System.out;
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeMinorFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a minor fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeLesserFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a lesser fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeCommonFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a common fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeImprovedFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received an improved fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeMajorFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a major fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeSuperiorFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a superior fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeGreaterFirePotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a greater fire resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+    }
+    @Test
+    public void testAirPotionPrints(){
+        PrintStream originalOut = System.out;
+        try{
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            System.setOut((new PrintStream(baos)));
+            inventory.takeMinorAirPotion();
+
+            String printedText = baos.toString().trim();
+
+            assertEquals("You received a minor air resistance potion.", printedText);
+            baos.reset();
+        } finally{
+            System.out.println(originalOut);
+        }
+        try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeLesserAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a lesser air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeCommonAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a common air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeImprovedAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received an improved air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeMajorAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a major air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeSuperiorAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a superior air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeGreaterAirPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a greater air resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    }
+    @Test
+    public void testEarthPotionPrints(){
+        PrintStream originalOut = System.out;
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeMinorEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a minor earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeLesserEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a lesser earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeLesserEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a lesser earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeCommonEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a common earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeImprovedEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received an improved earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeMajorEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a major earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeSuperiorEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a superior earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeGreaterEarthPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a greater earth resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    }
+    @Test
+    public void testPoisonPotionPrints(){
+        PrintStream originalOut = System.out;
+
+        try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeMinorPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a minor poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeLesserPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a lesser poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeCommonPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a common poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeImprovedPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received an improved poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeMajorPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a major poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeSuperiorPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a superior poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+
+    try{
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut((new PrintStream(baos)));
+        inventory.takeGreaterPoisonPotion();
+
+        String printedText = baos.toString().trim();
+
+        assertEquals("You received a greater poison resistance potion.", printedText);
+        baos.reset();
+    } finally{
+        System.out.println(originalOut);
+    }
+    }
+    @Test
+    public void testPotionGetters(){
+        //!minors 3
+        inventory.takeMinorAirPotion();
+        inventory.takeMinorAirPotion();
+        inventory.takeMinorAirPotion();
+
+        inventory.takeMinorEarthPotion();
+        inventory.takeMinorEarthPotion();
+        inventory.takeMinorEarthPotion();
+
+        inventory.takeMinorFirePotion();
+        inventory.takeMinorFirePotion();
+        inventory.takeMinorFirePotion();
+
+        inventory.takeMinorIcePotion();
+        inventory.takeMinorIcePotion();
+        inventory.takeMinorIcePotion();
+
+        inventory.takeMinorPoisonPotion();
+        inventory.takeMinorPoisonPotion();
+        inventory.takeMinorPoisonPotion();
+
+        //! lesser 4
+        inventory.takeLesserAirPotion();
+        inventory.takeLesserAirPotion();
+        inventory.takeLesserAirPotion();
+        inventory.takeLesserAirPotion();
+
+        inventory.takeLesserEarthPotion();
+        inventory.takeLesserEarthPotion();
+        inventory.takeLesserEarthPotion();
+        inventory.takeLesserEarthPotion();
+
+        inventory.takeLesserFirePotion();
+        inventory.takeLesserFirePotion();
+        inventory.takeLesserFirePotion();
+        inventory.takeLesserFirePotion();
+
+        inventory.takeLesserIcePotion();
+        inventory.takeLesserIcePotion();
+        inventory.takeLesserIcePotion();
+        inventory.takeLesserIcePotion();
+
+        inventory.takeLesserPoisonPotion();
+        inventory.takeLesserPoisonPotion();
+        inventory.takeLesserPoisonPotion();
+        inventory.takeLesserPoisonPotion();
+
+        //! common 5
+
+        inventory.takeCommonAirPotion();
+        inventory.takeCommonAirPotion();
+        inventory.takeCommonAirPotion();
+        inventory.takeCommonAirPotion();
+        inventory.takeCommonAirPotion();
+
+        inventory.takeCommonIcePotion();
+        inventory.takeCommonIcePotion();
+        inventory.takeCommonIcePotion();
+        inventory.takeCommonIcePotion();
+        inventory.takeCommonIcePotion();
+
+        inventory.takeCommonFirePotion();
+        inventory.takeCommonFirePotion();
+        inventory.takeCommonFirePotion();
+        inventory.takeCommonFirePotion();
+        inventory.takeCommonFirePotion();
+
+        inventory.takeCommonEarthPotion();
+        inventory.takeCommonEarthPotion();
+        inventory.takeCommonEarthPotion();
+        inventory.takeCommonEarthPotion();
+        inventory.takeCommonEarthPotion();
+
+        inventory.takeCommonPoisonPotion();
+        inventory.takeCommonPoisonPotion();
+        inventory.takeCommonPoisonPotion();
+        inventory.takeCommonPoisonPotion();
+        inventory.takeCommonPoisonPotion();
+
+        //! improved 6
+
+        inventory.takeImprovedAirPotion();
+        inventory.takeImprovedAirPotion();
+        inventory.takeImprovedAirPotion();
+        inventory.takeImprovedAirPotion();
+        inventory.takeImprovedAirPotion();
+        inventory.takeImprovedAirPotion();
+
+        inventory.takeImprovedIcePotion();
+        inventory.takeImprovedIcePotion();
+        inventory.takeImprovedIcePotion();
+        inventory.takeImprovedIcePotion();
+        inventory.takeImprovedIcePotion();
+        inventory.takeImprovedIcePotion();
+
+        inventory.takeImprovedFirePotion();
+        inventory.takeImprovedFirePotion();
+        inventory.takeImprovedFirePotion();
+        inventory.takeImprovedFirePotion();
+        inventory.takeImprovedFirePotion();
+        inventory.takeImprovedFirePotion();
+
+        inventory.takeImprovedEarthPotion();
+        inventory.takeImprovedEarthPotion();
+        inventory.takeImprovedEarthPotion();
+        inventory.takeImprovedEarthPotion();
+        inventory.takeImprovedEarthPotion();
+        inventory.takeImprovedEarthPotion();
+
+        inventory.takeImprovedPoisonPotion();
+        inventory.takeImprovedPoisonPotion();
+        inventory.takeImprovedPoisonPotion();
+        inventory.takeImprovedPoisonPotion();
+        inventory.takeImprovedPoisonPotion();
+        inventory.takeImprovedPoisonPotion();
+
+        //! majors 2
+
+        inventory.takeMajorAirPotion();
+        inventory.takeMajorAirPotion();
+        
+
+        inventory.takeMajorIcePotion();
+        inventory.takeMajorIcePotion();
+        
+
+        inventory.takeMajorFirePotion();
+        inventory.takeMajorFirePotion();
+        
+
+        inventory.takeMajorEarthPotion();
+        inventory.takeMajorEarthPotion();
+        
+
+        inventory.takeMajorPoisonPotion();
+        inventory.takeMajorPoisonPotion();
+        
+
+        //! superiors 3
+
+        inventory.takeSuperiorAirPotion();
+        inventory.takeSuperiorAirPotion();
+        inventory.takeSuperiorAirPotion();
+
+        inventory.takeSuperiorIcePotion();
+        inventory.takeSuperiorIcePotion();
+        inventory.takeSuperiorIcePotion();
+
+        inventory.takeSuperiorFirePotion();
+        inventory.takeSuperiorFirePotion();
+        inventory.takeSuperiorFirePotion();
+
+        inventory.takeSuperiorEarthPotion();
+        inventory.takeSuperiorEarthPotion();
+        inventory.takeSuperiorEarthPotion();
+
+        inventory.takeSuperiorPoisonPotion();
+        inventory.takeSuperiorPoisonPotion();
+        inventory.takeSuperiorPoisonPotion();
+
+        //! greaters 5
+
+        inventory.takeGreaterAirPotion();
+        inventory.takeGreaterAirPotion();
+        inventory.takeGreaterAirPotion();
+        inventory.takeGreaterAirPotion();
+        inventory.takeGreaterAirPotion();
+
+        inventory.takeGreaterIcePotion();
+        inventory.takeGreaterIcePotion();
+        inventory.takeGreaterIcePotion();
+        inventory.takeGreaterIcePotion();
+        inventory.takeGreaterIcePotion();
+
+        inventory.takeGreaterFirePotion();
+        inventory.takeGreaterFirePotion();
+        inventory.takeGreaterFirePotion();
+        inventory.takeGreaterFirePotion();
+        inventory.takeGreaterFirePotion();
+
+        inventory.takeGreaterEarthPotion();
+        inventory.takeGreaterEarthPotion();
+        inventory.takeGreaterEarthPotion();
+        inventory.takeGreaterEarthPotion();
+        inventory.takeGreaterEarthPotion();
+
+        inventory.takeGreaterPoisonPotion();
+        inventory.takeGreaterPoisonPotion();
+        inventory.takeGreaterPoisonPotion();
+        inventory.takeGreaterPoisonPotion();
+        inventory.takeGreaterPoisonPotion();
+
+        assertEquals(3, inventory.getMinorAirPotion());
+        assertEquals(3, inventory.getMinorFirePotion());
+        assertEquals(3, inventory.getMinorIcePotion());
+        assertEquals(3, inventory.getMinorEarthPotion());
+        assertEquals(3, inventory.getMinorPoisonPotion());
+
+        assertEquals(4, inventory.getLesserAirPotion());
+        assertEquals(4, inventory.getLesserFirePotion());
+        assertEquals(4, inventory.getLesserIcePotion());
+        assertEquals(4, inventory.getLesserEarthPotion());
+        assertEquals(4, inventory.getLesserPoisonPotion());
+
+        assertEquals(5, inventory.getCommonAirPotion());
+        assertEquals(5, inventory.getCommonFirePotion());
+        assertEquals(5, inventory.getCommonIcePotion());
+        assertEquals(5, inventory.getCommonEarthPotion());
+        assertEquals(5, inventory.getCommonPoisonPotion());
+
+        assertEquals(6, inventory.getImprovedAirPotion());
+        assertEquals(6, inventory.getImprovedFirePotion());
+        assertEquals(6, inventory.getImprovedIcePotion());
+        assertEquals(6, inventory.getImprovedEarthPotion());
+        assertEquals(6, inventory.getImprovedPoisonPotion());
+
+        assertEquals(2, inventory.getMajorAirPotion());
+        assertEquals(2, inventory.getMajorFirePotion());
+        assertEquals(2, inventory.getMajorIcePotion());
+        assertEquals(2, inventory.getMajorEarthPotion());
+        assertEquals(2, inventory.getMajorPoisonPotion());
+
+        assertEquals(3, inventory.getSuperiorAirPotion());
+        assertEquals(3, inventory.getSuperiorFirePotion());
+        assertEquals(3, inventory.getSuperiorIcePotion());
+        assertEquals(3, inventory.getSuperiorEarthPotion());
+        assertEquals(3, inventory.getSuperiorPoisonPotion());
+
+        assertEquals(5, inventory.getGreaterAirPotion());
+        assertEquals(5, inventory.getGreaterFirePotion());
+        assertEquals(5, inventory.getGreaterIcePotion());
+        assertEquals(5, inventory.getGreaterEarthPotion());
+        assertEquals(5, inventory.getGreaterPoisonPotion());
+        
+
+
+
+
+    }
+    @Test
+    public void testHpPotions(){
+        
     }
     
 }
